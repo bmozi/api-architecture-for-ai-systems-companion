@@ -21,6 +21,13 @@ or Harborline examples, the facilitator prompts, the observation rubric, the
 scoring rubric, or an answer key. It does not mean this is a randomized,
 controlled, or formally validated research study.
 
+## Separate reader-value packet
+
+The [API Reader-Value Pilot Packet](api-reader-value-v1/README.md) is a
+separately versioned, prepared, and unrun candidate for the newer MCP, agent,
+role-transfer, and decision-owner materials. It does not change this packet's
+scope or inherit any result from it.
+
 ## Materials by audience
 
 ### Participant receives

@@ -28,3 +28,15 @@ and which validation or usability state actually changed.
 - **Boundary:** Repository validation establishes declared files and link
   integrity only. It does not validate the method, API, MCP exposure, security,
   production behavior, or public-release readiness.
+
+## 2026-08-29 reader-value pilot candidate
+
+- **Authority:** Portfolio API/Data pilot program and reader-value completion
+  standard
+- **Added:** `API-RV-PILOT-001` version 1.0.0, a two-stage practitioner and
+  decision-owner packet covering API, MCP, agent, event, workflow, and evidence
+- **Scenario status:** Stonebridge is constructed and fictional
+- **Execution status:** PREPARED and UNRUN; no recruitment, consent, session,
+  observation, score, revision-from-observation, or result exists
+- **Prior packet boundary:** the Cedarway pre-MCP packet remains unchanged and
+  does not inherit the new packet's scope

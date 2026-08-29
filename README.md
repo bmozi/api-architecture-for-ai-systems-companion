@@ -49,6 +49,16 @@ Use [INDEX.md](INDEX.md) for role- and outcome-based routes and
 [BOOK-TO-COMPANION-MAP.md](BOOK-TO-COMPANION-MAP.md) to reconnect each tool to
 the book's reasoning.
 
+## Use it across roles
+
+[Role-Based Paths](ROLE-BASED-PATHS.md) connect the technical tools to developer,
+architect, manager, and executive decisions. The [Team Workshop](TEAM-WORKSHOP.md),
+[Value and Evidence Ledger](VALUE-AND-EVIDENCE-LEDGER.md),
+[Executive Decision Brief](EXECUTIVE-DECISION-BRIEF.md), and
+[Failure Lab](FAILURE-LAB.md) turn one capability into a cross-role review.
+The [Pilot and Usability Route](PILOT-AND-USABILITY.md) remains prepared and
+unrun.
+
 ## Development boundary
 
 This is a private development companion. The templates and constructed examples

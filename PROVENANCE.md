@@ -13,3 +13,18 @@
 Future changes must record the source-book commit or independent authority used,
 whether an example is genuine, anonymized, constructed, scenario, or observed,
 and which validation or usability state actually changed.
+
+## 2026-08-29 reader-value completion layer
+
+- **Authority:** Author direction to make the series useful to software
+  practitioners, management, and executives; portfolio reader-value completion
+  standard
+- **Added:** role paths, team workshop, value-and-evidence ledger, executive
+  brief, successful-timeout failure lab, and pilot route
+- **Scenario state:** The Northbridge miniature and failure lab are constructed
+  teaching material.
+- **Execution state:** `PREPARED/UNRUN`; no participant, workshop, failure-lab,
+  usability, business-value, or adoption result exists.
+- **Boundary:** Repository validation establishes declared files and link
+  integrity only. It does not validate the method, API, MCP exposure, security,
+  production behavior, or public-release readiness.

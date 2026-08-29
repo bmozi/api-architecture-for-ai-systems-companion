@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Architecting APIs in the Age of AI Companion",
+  "book_repository": "https://github.com/bmozi/architecting-apis-in-the-age-of-ai",
+  "source_commit": "48a1d47",
+  "required_files": [
+    "README.md",
+    "START-HERE.md",
+    "INDEX.md",
+    "BOOK-TO-COMPANION-MAP.md",
+    "LICENSE-STATUS.md",
+    "PROVENANCE.md",
+    "VALIDATION.md"
+  ],
+  "gateway_assets": [
+    {
+      "path": "api-meaning-and-authority-brief.md",
+      "first_pass": "Ten-minute first pass",
+      "required_language": ["Plain-language vocabulary", "outside"],
+      "examples": ["examples/northbridge-inventory-reservation-meaning-authority-example.md"]
+    }
+  ]
+}

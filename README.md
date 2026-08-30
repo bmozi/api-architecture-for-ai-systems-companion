@@ -57,7 +57,7 @@ architect, manager, and executive decisions. The [Team Workshop](TEAM-WORKSHOP.m
 [Executive Decision Brief](EXECUTIVE-DECISION-BRIEF.md), and
 [Failure Lab](FAILURE-LAB.md) turn one capability into a cross-role review.
 The [Pilot and Usability Route](PILOT-AND-USABILITY.md) and reader-value packet
-version 1.2.1 remain prepared and unrun with human participants.
+version 1.2.2 remain prepared and unrun with human participants.
 
 ## Development boundary
 

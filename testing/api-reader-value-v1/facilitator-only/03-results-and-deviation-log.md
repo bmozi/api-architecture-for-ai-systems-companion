@@ -1,11 +1,11 @@
 # Results and Deviation Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.0
+**Packet:** API-RV-PILOT-001 version 1.2.1
 **Status:** Blank controlled record; no result exists
 
-**Revision note:** Version 1.2.0 strengthens exact-file transfer, freeze
-provenance, and staged decision evidence after synthetic protocol audit; it has
-no human or practitioner validation.
+**Revision note:** Version 1.2.1 makes every freeze temporally ordered and
+non-self-referential after static protocol review; it has no human or
+practitioner validation.
 
 ## Run identity
 
@@ -29,42 +29,53 @@ no human or practitioner validation.
 - Prepared-source manifest match:
 - Supplied and withheld materials correct: yes / no / deviation
 - Confidentiality or privacy concern:
-- Initial Stage A outputs frozen at with timezone, exact filenames,
-  IDs/versions, hashes, and manifest:
-- Revised Stage A outputs frozen at with timezone:
-- One-screen handoff frozen at with timezone, ID/version, exact filename, hash,
-  and manifest:
+- Initial Stage A artifacts completed before manifest creation: yes / no /
+  deviation; IDs/versions and completion timestamps/timezones:
+- Initial governing manifest filename/hash and observed verification
+  timestamp/timezone:
+- Initial detached verification record filename:
+  `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`
+- Revision-phase input manifest hashes initial artifacts, governing manifest,
+  and detached record: yes / no / deviation
 
 ## Revised-detail and Stage B transfer verification
 
-- Detached freeze record completed before handoff opened: yes / no / deviation
-- Detached record exact filename/hash: `API-A-REVISED-FREEZE-RECORD-v1.md` /
+- Revised artifacts completed before governing manifest creation: yes / no /
+  deviation
+- Revised detached record created only after manifest verification: yes / no /
+  deviation
+- Detached record exact filename/hash:
+  `API-A-REVISED-FREEZE-VERIFICATION-v1.md` /
 - Revised governing manifest exact filename/hash:
   `API-A-REVISED-ARTIFACTS-SHA256SUMS-v1.txt` /
-- Manifest verified and does not list/hash itself: yes / no / deviation
+- Manifest observed verification timestamp/timezone:
+- Manifest verified and lists neither itself nor the later record: yes / no /
+  deviation
+- Detached record claims no self-hash or future event: yes / no / deviation
+- Handoff-phase input manifest hashes revised artifacts, governing manifest,
+  and detached record: yes / no / deviation
 - Any incomplete state or premature artifact self-declaration of `FROZEN`:
   none / deviation
 
-| Handoff-linked exact local filename | Artifact ID/version | Completion timestamp/timezone | Pre-hash state | SHA-256 | Detached freeze status | Matched record/manifest | Supplied to Stage B under same filename |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `API-A-REVISED-WORKBOOK-v1.md` | | | `REVISED COMPLETE` | | `FROZEN` | | |
-| `API-A-REVISED-CAPABILITY-BRIEF-v1.md` | | | `REVISED COMPLETE` | | `FROZEN` | | |
+| Handoff-linked exact local filename | Artifact ID/version | Completion timestamp/timezone | Pre-hash state | SHA-256 | Matched later record/manifest | Supplied to Stage B under same filename |
+| --- | --- | --- | --- | --- | --- | --- |
+| `API-A-REVISED-WORKBOOK-v1.md` | | | `REVISED COMPLETE` | | | |
+| `API-A-REVISED-CAPABILITY-BRIEF-v1.md` | | | `REVISED COMPLETE` | | | |
 
 A rename, regenerated copy, summary, substitution, omission, missing record or
-manifest, mismatch, wrong pre-hash state, or missing detached `FROZEN` status
+manifest, mismatch, wrong pre-hash state, or missing detached verification
 stops detailed read-back.
 
 ## Artifact freezes
 
-| Freeze | Exact immutable filename | Artifact ID/version | Exact timestamp/timezone | SHA-256 or manifest reference | Preserved location |
-| --- | --- | --- | --- | --- | --- |
-| Stage A revised workbook | `API-A-REVISED-WORKBOOK-v1.md` | | | | |
-| Stage A revised capability brief | `API-A-REVISED-CAPABILITY-BRIEF-v1.md` | | | | |
-| Stage A detached revised freeze record | `API-A-REVISED-FREEZE-RECORD-v1.md` | | | | |
-| Stage A one-screen handoff | `API-A-ONE-SCREEN-HANDOFF-v1.md` | | | | |
-| Stage B Section 1 scan | `API-B-SECTION-1-SCAN-v1.md` | | | | |
-| Stage B Section 2 detail | `API-B-SECTION-2-DETAIL-v1.md` | | | | |
-| Stage B Sections 3-5 decision | `API-B-SECTIONS-3-5-DECISION-v1.md` | | | | |
+| Freeze | Governed artifact exact filename and pre-hash state | Governing manifest filename/hash | Observed manifest-verification timestamp/timezone | Later detached verification-record filename | Next-phase input manifest filename/hash | Preserved location |
+| --- | --- | --- | --- | --- | --- | --- |
+| Stage A initial | `API-A-INITIAL-WORKBOOK-v1.md`; `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`; `INITIAL COMPLETE` | `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` / | | `API-A-INITIAL-FREEZE-VERIFICATION-v1.md` | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage A revised | `API-A-REVISED-WORKBOOK-v1.md`; `API-A-REVISED-CAPABILITY-BRIEF-v1.md`; `REVISED COMPLETE` | `API-A-REVISED-ARTIFACTS-SHA256SUMS-v1.txt` / | | `API-A-REVISED-FREEZE-VERIFICATION-v1.md` | `API-A-HANDOFF-PHASE-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage A handoff | `API-A-ONE-SCREEN-HANDOFF-v1.md`; `HANDOFF COMPLETE` | `API-A-HANDOFF-SHA256SUMS-v1.txt` / | | `API-A-HANDOFF-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-1-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage B Section 1 | `API-B-SECTION-1-SCAN-v1.md`; `SECTION COMPLETE` | `API-B-SECTION-1-SHA256SUMS-v1.txt` / | | `API-B-SECTION-1-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-2-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage B Section 2 | `API-B-SECTION-2-DETAIL-v1.md`; `SECTION COMPLETE` | `API-B-SECTION-2-SHA256SUMS-v1.txt` / | | `API-B-SECTION-2-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-3-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage B Sections 3-5 | `API-B-SECTIONS-3-5-DECISION-v1.md`; `SECTION COMPLETE` | `API-B-SECTIONS-3-5-SHA256SUMS-v1.txt` / | | `API-B-SECTIONS-3-5-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-4-DEBRIEF-INPUT-SHA256SUMS-v1.txt` / | |
 
 ## Timing and interventions
 
@@ -120,7 +131,7 @@ The planned live-update revision is not a correction of frozen revised bytes.
 For every later correction, retain both old and new immutable artifacts and
 their governing records.
 
-| ID | Condition/reason | Correction timestamp/timezone | Exact old filename, ID/version, SHA-256, manifest | Exact new filename, ID/version, SHA-256, manifest | Replacement freeze record | Action/effect |
+| ID | Condition/reason | Correction timestamp/timezone | Exact old filename, ID/version, SHA-256, manifest, verification record | Exact new filename, ID/version, SHA-256, manifest | Replacement detached verification record | Action/effect |
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | |
 

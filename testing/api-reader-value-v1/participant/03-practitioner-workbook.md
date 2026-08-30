@@ -1,11 +1,15 @@
 # Stage A Practitioner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.0.0
+**Packet:** API-RV-PILOT-001 version 1.1.0
 **Status:** Blank participant record
+
+**Revision note:** Version 1.1.0 incorporates source repairs from a synthetic
+route preflight; it has no human or practitioner validation.
 
 - Participant code:
 - Broad role and experience band, optional:
-- Start and end time:
+- Stage start recorded before first file read, and end time:
+- Exact file-open order:
 - Frozen supplied-file manifest:
 
 ## 1. Recognition before terminology
@@ -36,7 +40,7 @@ can remain pending, and how a final result becomes trustworthy.
 
 - Smallest useful design or policy change:
 - First failure to test:
-- Owner of that test:
+- Owner of that test, or `UNASSIGNED` plus authority/trigger to assign one:
 - Result that would block or reverse the design:
 
 ## 5. Live update
@@ -45,24 +49,23 @@ Record the update exactly as supplied.
 
 - Initial answer now challenged:
 - Safe action for the partner:
-- Stonebridge's remaining obligation and owner:
+- Stonebridge's remaining obligation and authorized owner, or `UNASSIGNED`
+  plus assignment authority/trigger:
 - Duplicate, charge, event, or notification risk:
 - Artifact fields revised:
 - Evidence still missing:
+- Interim instruction to the customer or partner:
+- Who may issue that instruction:
+- Evidence supporting the instruction:
+- What must remain unsaid:
 
 ## 6. Cross-role handoff
 
-Write a handoff for a manager or decision owner who will not receive your verbal
-explanation:
-
-- Beneficiary and promised outcome:
-- Proposed bounded capability:
-- Organizational commitment required:
-- Largest unacceptable outcome:
-- Evidence available now:
-- Evidence still needed:
-- Recommended state: `EXPLORE` / `PROCEED BOUNDED` / `INVEST` / `HOLD` / `STOP`
-- Reconsideration trigger and date:
+After the live update, complete
+[the One-Screen Stage A Handoff](05-one-screen-handoff.md). Link the detailed
+artifact IDs. If no accountable owner is authorized, record `UNASSIGNED` and
+name the authority or trigger needed to assign one. Use either a justified
+calendar date or an evidence-based reconsideration trigger; do not invent one.
 
 ## 7. Material feedback
 

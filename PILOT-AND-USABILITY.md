@@ -19,8 +19,10 @@ the decision across roles, and identify evidence for a next decision?
 - separately versioned [API Reader-Value Pilot Packet](testing/api-reader-value-v1/README.md)
 - existing [companion usability test record](API-COMPANION-USABILITY-TEST-01.md)
 
-The existing frozen testing packet must not be silently altered to claim it
-tested these new materials. The new reader-value packet supplies a separate
+The current reader-value packet is version 1.1.0 and remains `PREPARED/UNRUN`
+for humans. Its route repairs came from synthetic internal QA, not practitioner
+validation. The existing frozen testing packet must not be silently altered to
+claim it tested these new materials. The new reader-value packet supplies a separate
 prepared protocol; both remain unrun. During the scored reader-value packet,
 follow its participant inventory exactly—the standalone Failure Lab is not an
 additional participant handout.
@@ -38,7 +40,9 @@ not infer representativeness from job title alone.
 3. completes a first artifact without invented authority;
 4. supports an outside-team read-back;
 5. detects or discusses seeded failure;
-6. produces a team decision with owners and evidence; and
+6. produces a team decision with evidence, an assigned owner or explicit
+   `UNASSIGNED` state plus assignment authority/trigger, and a justified date or
+   evidence-based review trigger; and
 7. makes an executive decision without promoting scenario benefit to measured
    ROI.
 

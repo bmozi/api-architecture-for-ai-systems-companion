@@ -1,7 +1,10 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.0.0
+**Packet:** API-RV-PILOT-001 version 1.1.0
 **Status:** Fictional, prepared, and unrun
+
+**Revision note:** Version 1.1.0 incorporates source repairs from a synthetic
+route preflight; it has no human or practitioner validation.
 
 Stonebridge Equipment Rental rents generators and tools through its own service
 desk and partner marketplaces. A customer wants to keep generator `SR-4821`
@@ -60,7 +63,8 @@ Without discussing the intended answer with a facilitator:
 4. State what `accepted` permits the partner to say and what evidence would
    prove final completion.
 5. Leave missing authority or evidence as unknown; do not invent it.
-6. Complete the handoff in the practitioner workbook.
+6. Complete the separate one-screen handoff only after the live update. Link it
+   to the detailed artifacts rather than copying their contents.
 
 ## Live update
 

@@ -23,8 +23,9 @@ controlled, or formally validated research study.
 
 ## Separate reader-value packet
 
-The [API Reader-Value Pilot Packet](api-reader-value-v1/README.md) is a
-separately versioned, prepared, and unrun candidate for the newer MCP, agent,
+The [API Reader-Value Pilot Packet](api-reader-value-v1/README.md), currently
+version 1.1.0, is a separately versioned, prepared, and human-unrun candidate
+for the newer MCP, agent,
 role-transfer, and decision-owner materials. It does not change this packet's
 scope or inherit any result from it.
 

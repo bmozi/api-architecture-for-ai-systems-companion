@@ -1,14 +1,15 @@
 # Stage A Practitioner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.1.0
+**Packet:** API-RV-PILOT-001 version 1.2.0
 **Status:** Blank participant record
 
-**Revision note:** Version 1.1.0 incorporates source repairs from a synthetic
-route preflight; it has no human or practitioner validation.
+**Revision note:** Version 1.2.0 strengthens exact-file transfer and freeze
+provenance after synthetic protocol audit; it has no human or practitioner
+validation.
 
 - Participant code:
 - Broad role and experience band, optional:
-- Stage start recorded before first file read, and end time:
+- Stage start recorded before first file read, with timezone, and end time:
 - Exact file-open order:
 - Frozen supplied-file manifest:
 
@@ -47,6 +48,9 @@ can remain pending, and how a final result becomes trustworthy.
 
 Record the update exactly as supplied.
 
+This is the planned live-update revision that creates the first revised set.
+It is not a correction of already frozen revised bytes.
+
 - Initial answer now challenged:
 - Safe action for the partner:
 - Stonebridge's remaining obligation and authorized owner, or `UNASSIGNED`
@@ -61,11 +65,43 @@ Record the update exactly as supplied.
 
 ## 6. Cross-role handoff
 
-After the live update, complete
-[the One-Screen Stage A Handoff](05-one-screen-handoff.md). Link the detailed
-artifact IDs. If no accountable owner is authorized, record `UNASSIGNED` and
+Before opening the handoff, save and freeze exactly:
+
+- `API-A-REVISED-WORKBOOK-v1.md`; and
+- `API-A-REVISED-CAPABILITY-BRIEF-v1.md`.
+
+Each file must record an artifact ID, version, completion timestamp/timezone,
+and pre-hash state `REVISED COMPLETE`. Do not make the artifact self-declare
+`FROZEN`. Create
+`API-A-REVISED-ARTIFACTS-SHA256SUMS-v1.txt` without listing or hashing the
+manifest itself. Complete and verify
+`API-A-REVISED-FREEZE-RECORD-v1.md` from the detached record template before
+opening the blank handoff.
+
+- Revised workbook artifact ID/version, completion timestamp/timezone, and
+  pre-hash state:
+- Revised capability-brief artifact ID/version, completion timestamp/timezone,
+  and pre-hash state:
+- Revised freeze timestamp and timezone:
+- Governing manifest filename/hash:
+- Detached freeze-record filename/hash:
+- Detached record confirms both hashes and establishes `FROZEN`: yes / no
+- No `DRAFT`, `PENDING`, `PENDING FREEZE`, `AWAITING FREEZE`, blank, or
+  equivalent incomplete state remains: yes / no
+
+Only after those checks, complete [the One-Screen Stage A
+Handoff](05-one-screen-handoff.md) as
+`API-A-ONE-SCREEN-HANDOFF-v1.md`. Link the literal filenames, IDs, versions,
+and hashes. If no accountable owner is authorized, record `UNASSIGNED` and
 name the authority or trigger needed to assign one. Use either a justified
 calendar date or an evidence-based reconsideration trigger; do not invent one.
+
+- Handoff freeze timestamp/timezone, ID/version, hash, and manifest reference:
+
+If any revised frozen byte later changes, preserve the old file and record the
+exact old/new immutable filenames, IDs/versions, hashes, reason, correction
+timestamp/timezone, replacement freeze record, and replacement manifest. Do
+not describe that post-freeze correction as the planned live-update revision.
 
 ## 7. Material feedback
 

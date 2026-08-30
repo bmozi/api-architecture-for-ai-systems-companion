@@ -19,9 +19,9 @@ the decision across roles, and identify evidence for a next decision?
 - separately versioned [API Reader-Value Pilot Packet](testing/api-reader-value-v1/README.md)
 - existing [companion usability test record](API-COMPANION-USABILITY-TEST-01.md)
 
-The current reader-value packet is version 1.1.0 and remains `PREPARED/UNRUN`
-for humans. Its route repairs came from synthetic internal QA, not practitioner
-validation. The existing frozen testing packet must not be silently altered to
+The current reader-value packet is version 1.2.0 and remains `PREPARED/UNRUN`
+for humans. Its route and provenance repairs came from synthetic internal QA,
+not practitioner validation. The existing frozen testing packet must not be silently altered to
 claim it tested these new materials. The new reader-value packet supplies a separate
 prepared protocol; both remain unrun. During the scored reader-value packet,
 follow its participant inventory exactly—the standalone Failure Lab is not an

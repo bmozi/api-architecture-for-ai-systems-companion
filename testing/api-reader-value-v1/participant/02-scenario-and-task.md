@@ -1,10 +1,10 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.1.0
+**Packet:** API-RV-PILOT-001 version 1.2.0
 **Status:** Fictional, prepared, and unrun
 
-**Revision note:** Version 1.1.0 incorporates source repairs from a synthetic
-route preflight; it has no human or practitioner validation.
+**Revision note:** Version 1.2.0 strengthens protocol provenance after
+synthetic audit; it has no human or practitioner validation.
 
 Stonebridge Equipment Rental rents generators and tools through its own service
 desk and partner marketplaces. A customer wants to keep generator `SR-4821`
@@ -70,6 +70,9 @@ Without discussing the intended answer with a facilitator:
 
 The facilitator will provide one update after the initial artifact is frozen.
 Revise only after hearing it. Record the original and revised answer.
+
+That planned revision creates the first revised artifact set. It is not a
+later correction of already frozen revised bytes.
 
 ## Boundary
 

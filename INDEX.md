@@ -33,6 +33,6 @@ and executive journeys.
 - [Executive Decision Brief](EXECUTIVE-DECISION-BRIEF.md)
 - [Failure Lab](FAILURE-LAB.md)
 - [Pilot and Usability Route](PILOT-AND-USABILITY.md)
-- [Prepared API Reader-Value Pilot Packet v1.1.0](testing/api-reader-value-v1/README.md)
+- [Prepared API Reader-Value Pilot Packet v1.2.0](testing/api-reader-value-v1/README.md)
 
 See [BOOK-TO-COMPANION-MAP.md](BOOK-TO-COMPANION-MAP.md) for chapter routing.

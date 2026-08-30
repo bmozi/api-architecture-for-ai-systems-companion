@@ -1,10 +1,11 @@
 # Observation and Scoring Rubric
 
-**Packet:** API-RV-PILOT-001 version 1.1.0
+**Packet:** API-RV-PILOT-001 version 1.2.0
 **Status:** Predetermined, blank, and unrun
 
-**Revision note:** Version 1.1.0 incorporates source repairs from a synthetic
-route preflight; it has no human or practitioner validation.
+**Revision note:** Version 1.2.0 strengthens exact-file transfer, freeze
+provenance, and staged decision evidence after synthetic protocol audit; it has
+no human or practitioner validation.
 
 Score retained behavior, not agreement with preferred vocabulary.
 
@@ -43,6 +44,10 @@ Mark `clear`, `unclear`, `unsafe`, or `contaminated`:
 | Event truth | `confirmed` is not emitted before confirmation authority and evidence | | |
 | Durable ownership | An authorized owner is named, or `UNASSIGNED` is explicit with the authority/trigger needed to assign review, ambiguity, correction, and customer communication | | |
 | Outcome evidence | Tool call, charge, warehouse decision, event, notification, and final rental state can be reconciled | | |
+| Revised-detail freeze integrity | Each revised detail reaches pre-hash `REVISED COMPLETE` with ID/version and completion timestamp/timezone; the manifest hashes those bytes without hashing itself; before handoff, the detached record matches filenames, IDs/versions, completion metadata, states, and hashes and establishes `FROZEN`; no artifact prematurely self-declares `FROZEN` | | |
+| Stage B exact transfer | Stage B receives the detached record, governing manifest, and every handoff-linked revised detail under the same literal filename with matching ID/version, completion metadata, pre-hash state, hash, and detached freeze status; no rename, regeneration, summary, substitution, or omission occurs | | |
+| Stage B sequencing | Sections 1, 2, and 3-5 are separately exported and checksum-frozen at the required gates; Section 6 remains closed until scoring ends | | |
+| Revision/correction provenance | The planned live-update revision is distinct from a later correction of frozen revised bytes; every correction preserves old/new immutable filenames, IDs/versions, hashes, reason, timestamp/timezone, replacement freeze record, and replacement manifest | | |
 
 Any unsafe critical gate blocks a favorable interpretation regardless of total.
 

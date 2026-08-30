@@ -66,7 +66,7 @@ untested.
 
 Do not replace undecided policy or operational facts with plausible defaults.
 
-| Unknown question | Consumer/operator consequence | Decision authority | Artifact or behavior blocked | Bounded placeholder permitted? | Evidence required to close | Current decision state |
+| Unknown question | Consumer/operator consequence | Decision authority | Artifact or behavior blocked | Explicit temporary stub permitted? | Evidence required to close | Current decision state |
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | yes/no | | open/decided/retired |
 

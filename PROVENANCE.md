@@ -40,3 +40,11 @@ and which validation or usability state actually changed.
   observation, score, revision-from-observation, or result exists
 - **Prior packet boundary:** the Cedarway pre-MCP packet remains unchanged and
   does not inherit the new packet's scope
+
+## 2026-08-29 source-alignment terminology repair
+
+- **Authority:** Author-directed collection drift and unfinished-marker audit
+- **Changed:** ambiguous “bounded placeholder” wording now asks whether an
+  explicit temporary stub is permitted
+- **Boundary:** synchronized source wording only; no implementation or evidence
+  state changed

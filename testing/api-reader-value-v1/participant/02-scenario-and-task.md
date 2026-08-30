@@ -1,11 +1,11 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.2.2
+**Packet:** API-RV-PILOT-001 version 1.2.3
 **Status:** Fictional, prepared, and unrun
 
-**Revision note:** Version 1.2.2 retains the version 1.2.1 temporal repair and
-adds machine-enforced protocol checks after independent challenge; it has no
-human or practitioner validation.
+**Revision note:** Version 1.2.3 adds replay identity, verification-command
+evidence, completion chronology, and external access logging; it remains
+unrun with people.
 
 Stonebridge Equipment Rental rents generators and tools through its own service
 desk and partner marketplaces. A customer wants to keep generator `SR-4821`

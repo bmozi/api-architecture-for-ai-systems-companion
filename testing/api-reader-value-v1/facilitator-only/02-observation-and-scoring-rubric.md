@@ -1,9 +1,9 @@
 # Observation and Scoring Rubric
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Predetermined, blank, and unrun
 
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+**Revision note:** Version 1.2.5 adds full-route and layout evidence gates while preserving version 1.2.4's exact immutable Stage A live-update
 input into the revision-phase manifest. It preserves version 1.2.3's replay
 identity, verification chronology, and external access logging and remains
 unrun with people.
@@ -54,6 +54,30 @@ Mark `clear`, `unclear`, `unsafe`, or `contaminated`:
 | Detached-record replay identity | Every record contains attempt ID, phase, artifact actor, facilitator, verifier, exact verification command, complete output, exit code, observed verification timestamp/timezone, record-completing actor, and a separately recorded later completion timestamp/timezone; any blank, failure, or reversal blocks `FROZEN` | | |
 | Execution/access continuity | The facilitator-side log records ordered manifest gates, item opens/access attempts, artifact completions, manifest creations/verifications, record completions, and phase opens with filenames, actors, timestamps/timezones, predecessor bindings, and manifest SHA-256; participant input contains no undeclared orchestration or facilitator file | | |
 | Revision/correction provenance | The planned live-update revision is distinct from a later correction of frozen revised bytes; every correction preserves old/new immutable filenames, IDs/versions, hashes, reason, timestamp/timezone, replacement detached verification record, and replacement manifest | | |
+
+## Full-route protocol integrity
+
+Mark each `clear`, `deviated`, or `not interpretable`. These checks are outside
+the six scored freeze chains.
+
+| Condition | Result | Evidence |
+| --- | --- | --- |
+| Exactly one run-specific human-consent or synthetic-context branch was selected; a synthetic attempt made no fictional consent or human-result claim | | |
+| Stage A context/start preceded the three Stage A freezes; separate material feedback and Stage A end followed the handoff freeze without changing frozen workbook or handoff bytes | | |
+| Stage B context/start preceded the three Stage B freezes; `SCORING_ENDED` preceded all debrief access | | |
+| The debrief manifest bound the exact Sections 3-5 trilogy plus `07-section-6-debrief.md`; debrief completion did not repair frozen scored bytes; Stage B end followed | | |
+| Immutable run-specific results, including the exact five-member revision binding, completed before log close and did not predict the future log hash | | |
+| A later external closeout bound the observed closed-log, closeout-manifest, and results hashes | | |
+| Six scored freeze chains and full-route closure were reported separately | | |
+
+## One-page layout proof boundary
+
+A favorable local `LAYOUT PASSED` statement requires a completed proof of one
+US Letter page, at least 0.5-inch margins, at least 9-point body/table type, no
+more than 450 reader-facing words excluding immutable provenance, and no
+clipping, overlap, hidden overflow, or unreadable shrinking. Layout evidence is
+not human comprehension, scanability behavior, usability, API correctness,
+safety, or business value.
 
 Any unsafe critical gate blocks a favorable interpretation regardless of total.
 

@@ -21,6 +21,11 @@
     "testing/api-reader-value-v1/README.md",
     "testing/api-reader-value-v1/SHA256SUMS",
     "testing/api-reader-value-v1/temporal-protocol.json",
+    "testing/api-reader-value-v1/participant/01-synthetic-context-record.md",
+    "testing/api-reader-value-v1/participant/07-section-6-debrief.md",
+    "testing/api-reader-value-v1/participant/08-stage-a-material-feedback.md",
+    "testing/api-reader-value-v1/facilitator-only/06-handoff-layout-proof-record.md",
+    "testing/api-reader-value-v1/facilitator-only/07-external-closeout-record.md",
     "scripts/test_temporal_protocol.py"
   ],
   "checksum_manifests": [

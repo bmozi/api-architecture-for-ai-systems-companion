@@ -1,11 +1,24 @@
 # Participant Consent and Privacy Notice
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank; no consent has been obtained
+**Branch:** Human only; mutually exclusive with the synthetic-context record
+**Run artifact identity:** `API-HUMAN-CONSENT` / `v1`
 
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+**Revision note:** Version 1.2.5 adds an explicit human-only entry branch and
+complete route closure while preserving version 1.2.4's exact immutable Stage A live-update
 input and preserves version 1.2.3's replay, chronology, and access-log
 controls. It remains unrun with people.
+
+For Stage A, export the completed record as
+`API-HUMAN-CONSENT-STAGE-A-<ATTEMPT-ID>-v1.md`. For Stage B, use the separate
+participant's completed record and exact filename
+`API-HUMAN-CONSENT-STAGE-B-<ATTEMPT-ID>-v1.md`. The applicable completed record
+must be the sole branch record in that stage's context manifest.
+
+Do not use this notice for a synthetic rehearsal. A synthetic run uses
+`API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md` and must not fabricate human
+affirmations.
 
 ## Purpose
 

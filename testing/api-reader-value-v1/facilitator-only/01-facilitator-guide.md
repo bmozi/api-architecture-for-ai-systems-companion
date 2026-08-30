@@ -1,9 +1,9 @@
 # Facilitator Guide
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Facilitator-only; prepared and unrun
 
-**Revision note:** Version 1.2.4 exports and binds the exact immutable Stage A
+**Revision note:** Version 1.2.5 adds full-route closure while preserving version 1.2.4's exact immutable Stage A
 live-update input. It preserves version 1.2.3's replay identity, verification
 chronology, and external access logging and has no human or practitioner
 validation.
@@ -36,11 +36,14 @@ Time is evidence, not a speed target.
 
 ## Required capture
 
-For each participant, record setup start before the consent notice is first
-opened. Obtain consent, then record the exact stage start immediately before
-the route is opened. Record the exact file-open order, each pause or question,
-and every intervention with time and level. Do not reconstruct these from
-memory after the session.
+First create the run-specific execution/access log and record `RUN_STARTED`.
+Choose exactly one entry branch and record `ENTRY_BRANCH_SELECTED`. For a
+human, record setup start before the notice opens and complete separate Stage A
+and Stage B consent records. For a synthetic rehearsal, complete
+`API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`; do not complete a human consent
+form. Record the exact stage start immediately before the route opens, plus the
+file-open order, each pause or question, and every intervention. Do not
+reconstruct these from memory after the session.
 
 Maintain the facilitator-only
 [`execution and access log`](05-execution-and-access-log.md) item by item. Log
@@ -50,6 +53,14 @@ phase open with exact actor, facilitator, timestamp, timezone, filename, and
 continuity binding.
 
 ## Sealed flat delivery and manifest rule
+
+Before Stage A, verify `API-STAGE-A-CONTEXT-SHA256SUMS-v1.txt` over only the
+selected branch record. Before Stage B, verify
+`API-STAGE-B-CONTEXT-SHA256SUMS-v1.txt` over only the applicable same-branch
+record. A branch omission, mixed branch, or synthetic claim of human consent,
+comprehension, usability, or practitioner result is a stop. Synthetic
+orchestration must be immutable and verified in
+`ORCHESTRATION-INPUT-SHA256SUMS` before use; it remains facilitator-side.
 
 Before each stage, copy only the approved exact files into a new sealed flat
 input. Preserve every literal local filename named by the packet route. Create
@@ -92,8 +103,8 @@ answer. Record every intervention.
 
 ## Stage A sequence
 
-1. Confirm consent and freeze identity. Record Stage A start before opening the
-   participant route.
+1. Confirm the selected branch and context-manifest verification. Record
+   `STAGE_A_STARTED` before opening the participant route.
 2. Follow the route exactly. Supply the scenario and workbook only, then let the
    participant complete Section 1 before opening companion assets.
 3. Supply only the three listed assets in the packet README, in order. Generic
@@ -150,14 +161,19 @@ answer. Record every intervention.
     in `API-A-HANDOFF-SHA256SUMS-v1.txt`, verify the manifest, and then create
     `API-A-HANDOFF-FREEZE-VERIFICATION-v1.md`.
 11. Preserve initial, revised, record, manifest, and handoff bytes without
-    alteration.
+    alteration. After the handoff detached record, release
+    `08-stage-a-material-feedback.md`; complete
+    `API-A-MATERIAL-FEEDBACK-v1.md` with identity, completion time/timezone,
+    and `FEEDBACK COMPLETE`. Record `STAGE_A_FEEDBACK_COMPLETED`, then
+    `STAGE_A_ENDED` and the exact Stage A end in the facilitator log. Do not
+    write that later end fact into a governed workbook or the feedback output.
 
 ## Stage B sequence
 
-1. Use a participant who did not create the Stage A artifact, obtain separate
-   consent, verify the phase-1 input manifest over the handoff, its governing
-   manifest, and detached verification record, and record exact Stage B start
-   and timezone before opening the route.
+1. Use a participant or synthetic reviewer who did not create the Stage A
+   artifact. Verify the selected same-branch context manifest and the phase-1
+   input manifest over the handoff, governing manifest, and detached record.
+   Record `STAGE_B_STARTED` and exact Stage B start/timezone before the route.
 2. Supply the route, `API-A-ONE-SCREEN-HANDOFF-v1.md` as first substantive
    content, and the decision-owner workbook. Complete
    `API-B-SECTION-1-SCAN-v1.md` with ID/version, completion timestamp/timezone,
@@ -179,10 +195,47 @@ answer. Record every intervention.
    `VALUE-AND-EVIDENCE-LEDGER.md`. Complete
    `API-B-SECTIONS-3-5-DECISION-v1.md` with completion metadata, hash only that
    export, verify its governing manifest, and then create its detached record.
-   Keep Section 6 closed until a debrief-phase input manifest hashes the last
-   export, governing manifest, and detached record and scoring ends.
-6. Keep the Stage A participant unavailable until then. End scoring before
-   allowing explanation or repair. Record exact Stage B end and timezone.
+   Keep Section 6 closed until the last detached record is complete.
+6. Keep the Stage A actor unavailable through the Sections 3-5 freeze. Record
+   `SCORING_ENDED`, then create and verify
+   `API-B-PHASE-4-DEBRIEF-INPUT-SHA256SUMS-v1.txt` over the last export,
+   governing manifest, detached record, and exact
+   `07-section-6-debrief.md`. Only then release debrief. Complete
+   `API-B-SECTION-6-DEBRIEF-v1.md` with identity, completion time/timezone, and
+   `DEBRIEF COMPLETE`; record `DEBRIEF_COMPLETED`. Do not alter frozen scored
+   bytes or scores. Record `STAGE_B_ENDED` and exact Stage B end/timezone in the
+   facilitator log.
+
+## Handoff layout proof
+
+After the handoff freeze, render the retained Markdown to US Letter portrait
+and complete `API-A-HANDOFF-LAYOUT-PROOF-<ATTEMPT-ID>-v1.md`. Preserve the
+Markdown, PDF, rendering command, tool versions, page count, and PDF SHA-256.
+`LAYOUT PASSED` requires exactly one page, margins at least 0.5 inch,
+body/table text at least 9 points, no more than 450 reader-facing words
+excluding immutable provenance, and no clipping, overlap, hidden overflow, or
+unreadable shrinking. Layout evidence does not establish human scanability or
+comprehension.
+
+## Results, log close, and external closeout
+
+After `STAGE_B_ENDED`, create a new immutable
+`API-RUN-RESULTS-<ATTEMPT-ID>-v1.md` with artifact identity `API-RUN-RESULTS` /
+`v1`, completion timestamp/timezone, and `RUN RESULTS COMPLETE`. Include exact
+source/orchestration identities, all six freeze chains, the five-member
+revision binding, final pre-close checkpoint, declared counts, both stage
+boundaries, scoring/debrief, interventions/deviations/stops/rejected attempts,
+semantic inventions, layout failures, scores/API critical gates, five separate
+evidence states, decision, and limits.
+
+The result must not predict the final log hash or future closeout time. Record
+`RUN_RESULTS_COMPLETED` before `LOG_CLOSED`. Only then close and validate the
+log, copy it byte-identically to `closeout/input`, and create
+`API-RUN-CLOSEOUT-SHA256SUMS-v1.txt` over the closed log and results. Complete
+the later `API-RUN-CLOSEOUT-<ATTEMPT-ID>-v1.md` binding all three hashes outside
+the closed log. Six scored freeze chains complete is not full synthetic route
+complete; layout passed is not comprehension; human evidence remains
+`PREPARED/UNRUN` and real-world evidence remains `UNRUN`.
 
 ## Intervention levels
 

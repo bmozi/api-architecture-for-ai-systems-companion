@@ -22,6 +22,7 @@ PACKET_HEADER_PATTERN = re.compile(
     r"^\*\*Packet:\*\*\s*(\S+)\s+version\s+(\S+)\s*$", re.MULTILINE
 )
 TEMPORAL_SCHEMA_VERSION = 3
+PACKET_VERSION = "1.2.5"
 LIVE_UPDATE_FILENAME = "API-A-LIVE-UPDATE-v1.md"
 LIVE_UPDATE_PATH = f"participant/{LIVE_UPDATE_FILENAME}"
 REVISION_PHASE_ID = "stage_a_revision"
@@ -134,6 +135,167 @@ STALE_GOVERNED_FIELDS = [
     "- Manifest reference:",
     "- Governing manifest filename/hash:",
 ]
+ENTRY_BRANCH_PROTOCOL = {
+    "selection_required": True,
+    "mutually_exclusive": True,
+    "selection_event": "ENTRY_BRANCH_SELECTED",
+    "stage_a_context_manifest": "API-STAGE-A-CONTEXT-SHA256SUMS-v1.txt",
+    "stage_b_context_manifest": "API-STAGE-B-CONTEXT-SHA256SUMS-v1.txt",
+    "human": {
+        "template": "participant/01-consent-and-privacy.md",
+        "stage_a_run_filename_pattern": "API-HUMAN-CONSENT-STAGE-A-<ATTEMPT-ID>-v1.md",
+        "stage_b_run_filename_pattern": "API-HUMAN-CONSENT-STAGE-B-<ATTEMPT-ID>-v1.md",
+        "requires_completed_human_consent": True,
+        "forbids_synthetic_context": True,
+    },
+    "synthetic": {
+        "template": "participant/01-synthetic-context-record.md",
+        "artifact_id": "API-SYNTHETIC-CONTEXT",
+        "version": "1",
+        "run_filename_pattern": "API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md",
+        "required_literal": "SYNTHETIC — NO HUMAN PARTICIPANT OR HUMAN DATA",
+        "replaces_human_consent": True,
+        "forbids_human_consent_form": True,
+        "forbids_human_result_claim": True,
+        "required_fields": [
+            "packet_id_version",
+            "attempt_id",
+            "synthetic_no_human_literal",
+            "fictional_scenario_only",
+            "human_evidence_limits",
+            "stage_a_actor_code",
+            "stage_b_actor_code",
+            "facilitator_code",
+            "orchestration_aided_status",
+            "orchestration_manifest_identity",
+            "evidence_root",
+            "retention_boundary",
+            "access_boundary",
+            "synthetic_start_timestamp_timezone",
+            "pre_scored_log_checkpoint",
+        ],
+    },
+}
+FULL_ROUTE_BOUNDARY_EVENTS = [
+    "RUN_STARTED",
+    "ENTRY_BRANCH_SELECTED",
+    "STAGE_A_CONTEXT_MANIFEST_VERIFIED",
+    "STAGE_A_STARTED",
+    "STAGE_A_FEEDBACK_COMPLETED",
+    "STAGE_A_ENDED",
+    "STAGE_B_CONTEXT_MANIFEST_VERIFIED",
+    "STAGE_B_STARTED",
+    "SCORING_ENDED",
+    "DEBRIEF_INPUT_MANIFEST_VERIFIED",
+    "DEBRIEF_COMPLETED",
+    "STAGE_B_ENDED",
+    "RUN_RESULTS_COMPLETED",
+    "LOG_CLOSED",
+]
+STAGE_A_FEEDBACK_PROTOCOL = {
+    "source_template": "participant/08-stage-a-material-feedback.md",
+    "output_artifact_id": "API-A-MATERIAL-FEEDBACK",
+    "output_version": "1",
+    "output_filename": "API-A-MATERIAL-FEEDBACK-v1.md",
+    "completion_state": "FEEDBACK COMPLETE",
+    "must_follow_freeze": "stage_a_handoff",
+    "completion_event": "STAGE_A_FEEDBACK_COMPLETED",
+    "must_precede_event": "STAGE_A_ENDED",
+    "not_a_scored_freeze_chain": True,
+}
+DEBRIEF_PROTOCOL = {
+    "input_manifest": "API-B-PHASE-4-DEBRIEF-INPUT-SHA256SUMS-v1.txt",
+    "required_members": [
+        "API-B-SECTIONS-3-5-DECISION-v1.md",
+        "API-B-SECTIONS-3-5-SHA256SUMS-v1.txt",
+        "API-B-SECTIONS-3-5-FREEZE-VERIFICATION-v1.md",
+        "07-section-6-debrief.md",
+    ],
+    "source_template": "participant/07-section-6-debrief.md",
+    "output_artifact_id": "API-B-SECTION-6-DEBRIEF",
+    "output_version": "1",
+    "output_filename": "API-B-SECTION-6-DEBRIEF-v1.md",
+    "completion_state": "DEBRIEF COMPLETE",
+    "must_follow_event": "SCORING_ENDED",
+    "may_not_modify_scored_bytes": True,
+}
+RESULTS_CONTRACT = {
+    "source_template": "facilitator-only/03-results-and-deviation-log.md",
+    "run_filename_pattern": "API-RUN-RESULTS-<ATTEMPT-ID>-v1.md",
+    "artifact_id": "API-RUN-RESULTS",
+    "version": "1",
+    "completion_state": "RUN RESULTS COMPLETE",
+    "completion_event": "RUN_RESULTS_COMPLETED",
+    "must_precede_event": "LOG_CLOSED",
+    "forbid_predicted_final_log_sha256": True,
+    "forbid_future_closeout_timestamp": True,
+    "required_fields": [
+        "packet_attempt_actors_facilitator_dates",
+        "source_and_orchestration_manifest_identities",
+        "six_freeze_chain_results",
+        "five_member_revision_binding",
+        "final_pre_close_log_checkpoint",
+        "declared_counts",
+        "stage_boundaries_and_debrief",
+        "interventions_deviations_stops_rejected_attempts",
+        "semantic_inventions_layout_failures_variances",
+        "reader_value_scores_and_api_critical_gates",
+        "protocol_synthetic_layout_human_real_world_states",
+        "decision_and_evidence_limits",
+    ],
+}
+EXTERNAL_CLOSEOUT_CONTRACT = {
+    "must_follow_event": "LOG_CLOSED",
+    "closed_log_must_validate": True,
+    "closed_log_copy_must_be_byte_identical": True,
+    "closeout_input_directory": "closeout/input",
+    "manifest": "API-RUN-CLOSEOUT-SHA256SUMS-v1.txt",
+    "manifest_exact_membership": ["closed_execution_log", "run_results"],
+    "record_template": "facilitator-only/07-external-closeout-record.md",
+    "record_filename_pattern": "API-RUN-CLOSEOUT-<ATTEMPT-ID>-v1.md",
+    "record_artifact_id": "API-RUN-CLOSEOUT",
+    "record_version": "1",
+    "record_completion_state": "CLOSEOUT COMPLETE",
+    "record_binds": [
+        "closed_log_sha256",
+        "closeout_manifest_sha256",
+        "run_results_sha256",
+    ],
+    "outside_closed_log": True,
+}
+LAYOUT_PROOF_CONTRACT = {
+    "target": "US Letter portrait",
+    "page_count": 1,
+    "minimum_margin_inches": 0.5,
+    "minimum_body_table_point_size": 9,
+    "maximum_reader_facing_words_excluding_provenance": 450,
+    "no_clipping": True,
+    "no_overlap": True,
+    "no_hidden_overflow": True,
+    "no_unreadable_shrinking": True,
+    "source_markdown_required": True,
+    "pdf_required": True,
+    "rendering_command_required": True,
+    "tool_versions_required": True,
+    "pdf_sha256_required": True,
+    "proof_template": "facilitator-only/06-handoff-layout-proof-record.md",
+    "proof_filename_pattern": "API-A-HANDOFF-LAYOUT-PROOF-<ATTEMPT-ID>-v1.md",
+    "favorable_claim_requires_passing_proof": True,
+    "layout_evidence_is_not_comprehension": True,
+}
+FULL_ROUTE_CLOSURE = {
+    "six_scored_freeze_chains_are_not_full_route": True,
+    "required_boundary_events": FULL_ROUTE_BOUNDARY_EVENTS,
+    "stage_a_context_gate_precedes_start": True,
+    "stage_a_feedback_precedes_end": True,
+    "stage_a_feedback": STAGE_A_FEEDBACK_PROTOCOL,
+    "stage_b_context_gate_precedes_start": True,
+    "scoring_end_follows_sections_3_5_freeze": True,
+    "debrief": DEBRIEF_PROTOCOL,
+    "results": RESULTS_CONTRACT,
+    "log_close_requires_results_complete": True,
+    "external_closeout": EXTERNAL_CLOSEOUT_CONTRACT,
+}
 
 
 def markdown_links(path: Path):
@@ -255,6 +417,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
             errors.append(f"{prefix} packet_id must be a non-empty string")
         if not isinstance(packet_version, str) or not re.fullmatch(r"\d+\.\d+\.\d+", packet_version):
             errors.append(f"{prefix} packet_version must use semantic versioning")
+        elif packet_version != PACKET_VERSION:
+            errors.append(f"{prefix} packet_version must be {PACKET_VERSION}")
 
         if protocol.get("causal_order") != TEMPORAL_ORDER:
             errors.append(f"{prefix} invalid temporal causal order")
@@ -307,6 +471,10 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 errors.append(f"{prefix} undeclared orchestration must be forbidden")
             if input_policy.get("forbidden_examples") != FORBIDDEN_INPUT_EXAMPLES:
                 errors.append(f"{prefix} participant input forbidden examples are incomplete")
+            if input_policy.get("synthetic_orchestration_requires_prior_immutable_manifest") is not True:
+                errors.append(f"{prefix} synthetic orchestration must be frozen before use")
+            if input_policy.get("synthetic_orchestration_manifest") != "ORCHESTRATION-INPUT-SHA256SUMS":
+                errors.append(f"{prefix} synthetic orchestration manifest identity is invalid")
 
         execution_log = protocol.get("execution_access_log")
         if not isinstance(execution_log, dict):
@@ -324,10 +492,22 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 errors.append(f"{prefix} execution/access event sequence is incomplete or reordered")
             if execution_log.get("required_row_fields") != EXECUTION_LOG_FIELDS:
                 errors.append(f"{prefix} execution/access log row fields are incomplete")
+            if execution_log.get("required_route_boundaries") != FULL_ROUTE_BOUNDARY_EVENTS:
+                errors.append(f"{prefix} full-route execution boundaries are incomplete or reordered")
+            if execution_log.get("results_completion_precedes_log_close") is not True:
+                errors.append(f"{prefix} run results must precede log close")
+            if execution_log.get("external_closeout_is_later") is not True:
+                errors.append(f"{prefix} external closeout must follow log close")
         if protocol.get("next_release_bindings") != NEXT_RELEASE_BINDINGS:
             errors.append(
                 f"{prefix} next release must bind artifact, governing manifest, and detached record"
             )
+        if protocol.get("entry_branches") != ENTRY_BRANCH_PROTOCOL:
+            errors.append(f"{prefix} entry branches are incomplete, mixed, or stale")
+        if protocol.get("full_route_closure") != FULL_ROUTE_CLOSURE:
+            errors.append(f"{prefix} full-route closure is incomplete or stale")
+        if protocol.get("handoff_layout_proof") != LAYOUT_PROOF_CONTRACT:
+            errors.append(f"{prefix} one-page handoff proof contract is incomplete or stale")
 
         revision_input = protocol.get("revision_phase_input")
         live_update_relative: str | None = None
@@ -516,6 +696,10 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "execution and access log",
                 "`API-A-LIVE-UPDATE-v1.md`",
                 "five-member manifest",
+                "Choose exactly one entry branch",
+                "six scored freeze chains",
+                "full-route closure",
+                "`API-RUN-RESULTS-<ATTEMPT-ID>-v1.md`",
             ],
             "participant/00-packet-route.md": [
                 "For every detached verification record named below",
@@ -525,6 +709,23 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "`ORCHESTRATION.md`",
                 "`API-A-LIVE-UPDATE-v1.md`",
                 "Omission, rename, regeneration, summary, or hash mismatch",
+                "`RUN_STARTED`",
+                "`ENTRY_BRANCH_SELECTED`",
+                "`STAGE_A_STARTED`",
+                "`STAGE_A_ENDED`",
+                "`STAGE_B_STARTED`",
+                "`SCORING_ENDED`",
+                "`DEBRIEF_COMPLETED`",
+                "`STAGE_B_ENDED`",
+                "`RUN_RESULTS_COMPLETED`",
+                "`LOG_CLOSED`",
+            ],
+            "participant/01-synthetic-context-record.md": [
+                "`API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`",
+                "`SYNTHETIC — NO HUMAN PARTICIPANT OR HUMAN DATA`",
+                "No human consent, comprehension, usability, or practitioner result",
+                "Synthetic context start timestamp/timezone",
+                "Pre-scored execution-log checkpoint",
             ],
             "participant/02-scenario-and-task.md": [
                 "`API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`",
@@ -535,6 +736,24 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "Revision-phase input manifest exact filename and SHA-256",
                 "Live-update input exact filename: `API-A-LIVE-UPDATE-v1.md`",
                 "Exact live-update contents",
+            ],
+            "participant/05-one-screen-handoff.md": [
+                "US Letter portrait",
+                "at least 9 points",
+                "450 reader-facing words",
+                "favorable `LAYOUT PASSED` claim requires",
+            ],
+            "participant/07-section-6-debrief.md": [
+                "`API-B-SECTION-6-DEBRIEF-v1.md`",
+                "`SCORING_ENDED`",
+                "`DEBRIEF COMPLETE`",
+                "must not rewrite or upgrade frozen scored bytes",
+            ],
+            "participant/08-stage-a-material-feedback.md": [
+                "`API-A-MATERIAL-FEEDBACK-v1.md`",
+                "`FEEDBACK COMPLETE`",
+                "`STAGE_A_FEEDBACK_COMPLETED`",
+                "Do not place that later end event or timestamp",
             ],
             "participant/06-revised-artifact-freeze-record.md": [
                 "- Attempt ID:",
@@ -560,6 +779,9 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "undeclared `ORCHESTRATION.md`",
                 "exact immutable `API-A-LIVE-UPDATE-v1.md`",
                 "five-member manifest",
+                "`API-STAGE-A-CONTEXT-SHA256SUMS-v1.txt`",
+                "`API-STAGE-B-CONTEXT-SHA256SUMS-v1.txt`",
+                "`API-RUN-RESULTS-<ATTEMPT-ID>-v1.md`",
             ],
             "facilitator-only/02-observation-and-scoring-rubric.md": [
                 "Detached-record replay identity",
@@ -574,6 +796,11 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "Later record-completion timestamp/timezone",
                 "Immutable live-update participant input exact filename/hash",
                 "exact live-update input: yes / no / deviation",
+                "`API-RUN-RESULTS-<ATTEMPT-ID>-v1.md`",
+                "`RUN RESULTS COMPLETE`",
+                "Final closed-log SHA-256 is not available before `LOG_CLOSED`",
+                "Protocol integrity state",
+                "Real-world evidence state",
             ],
             "facilitator-only/04-temporal-freeze-protocol-and-record-templates.md": [
                 "- Attempt ID:",
@@ -596,6 +823,21 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "Complete observed output",
                 "Continuity binding",
                 "exact `API-A-LIVE-UPDATE-v1.md`",
+                "`RUN_RESULTS_COMPLETED`",
+                "before `LOG_CLOSED`",
+                "external closeout",
+            ],
+            "facilitator-only/06-handoff-layout-proof-record.md": [
+                "`API-A-HANDOFF-LAYOUT-PROOF-<ATTEMPT-ID>-v1.md`",
+                "US Letter portrait",
+                "Minimum body and table text size",
+                "Layout evidence is not human comprehension evidence",
+            ],
+            "facilitator-only/07-external-closeout-record.md": [
+                "`API-RUN-CLOSEOUT-<ATTEMPT-ID>-v1.md`",
+                "`API-RUN-CLOSEOUT-SHA256SUMS-v1.txt`",
+                "Closed execution-log SHA-256",
+                "Run-results SHA-256",
             ],
         }
         for document, clauses in required_document_clauses.items():
@@ -612,6 +854,48 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                     errors.append(
                         f"{prefix} {document} missing replay-control clause: {clause}"
                     )
+
+        synthetic_context = packet_dir / "participant/01-synthetic-context-record.md"
+        if synthetic_context.is_file():
+            synthetic_text = synthetic_context.read_text(encoding="utf-8").casefold()
+            forbidden_synthetic_claims = (
+                "human consent obtained",
+                "human comprehension passed",
+                "human usability passed",
+                "practitioner result passed",
+            )
+            if any(claim in synthetic_text for claim in forbidden_synthetic_claims):
+                errors.append(f"{prefix} synthetic context claims human consent or human results")
+
+        results_template = packet_dir / "facilitator-only/03-results-and-deviation-log.md"
+        results_source_text = (
+            results_template.read_text(encoding="utf-8")
+            if results_template.is_file()
+            else ""
+        )
+        if "Final closed-log SHA-256: `PREDICTED`" in results_source_text:
+            errors.append(f"{prefix} run results predict the future closed-log hash")
+
+        layout_template = packet_dir / "facilitator-only/06-handoff-layout-proof-record.md"
+        if layout_template.is_file() and (
+            "A favorable `LAYOUT PASSED` claim requires this completed proof"
+            not in layout_template.read_text(encoding="utf-8")
+        ):
+            errors.append(f"{prefix} favorable one-page claim lacks required proof")
+
+        for relative in (
+            "participant/03-practitioner-workbook.md",
+            "participant/04-decision-owner-workbook.md",
+        ):
+            governed_workbook = packet_dir / relative
+            if governed_workbook.is_file() and re.search(
+                r"^-\s*Stage(?:\s+B)?\s+end[^\n]*:",
+                governed_workbook.read_text(encoding="utf-8"),
+                re.MULTILINE | re.IGNORECASE,
+            ):
+                errors.append(
+                    f"{prefix} future Stage end field in governed workbook: {relative}"
+                )
 
         governed_templates = protocol.get("governed_templates")
         if not isinstance(governed_templates, list) or not governed_templates:

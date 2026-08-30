@@ -1,10 +1,11 @@
 # Facilitator Execution and Access Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank facilitator-side control record; prepared and unrun
 
-**Revision note:** Version 1.2.4 requires the Stage A revision-phase inventory
-to include exact immutable `API-A-LIVE-UPDATE-v1.md` and preserves version
+**Revision note:** Version 1.2.5 adds full-route boundaries while preserving
+version 1.2.4's requirement that the Stage A revision-phase inventory include
+exact immutable `API-A-LIVE-UPDATE-v1.md`. It preserves version
 1.2.3's item-level continuity and verification evidence. It remains unrun.
 
 Keep this log outside every sealed participant input. It is not a participant
@@ -31,6 +32,31 @@ within that attempt. Every row names its preceding event ID. Every phase-opening
 row also binds the verified input manifest and the prior phase's terminal
 record or manifest. A missing predecessor, unexplained gap, timestamp reversal,
 or changed byte is a deviation, not a detail to reconstruct later.
+
+## Full-route boundary order
+
+Record these non-substitutable boundaries around the six scored freeze chains:
+
+1. `RUN_STARTED`
+2. `ENTRY_BRANCH_SELECTED`
+3. `STAGE_A_CONTEXT_MANIFEST_VERIFIED`
+4. `STAGE_A_STARTED`
+5. Stage A initial, revised, and handoff freeze chains
+6. `STAGE_A_FEEDBACK_COMPLETED`
+7. `STAGE_A_ENDED`
+8. `STAGE_B_CONTEXT_MANIFEST_VERIFIED`
+9. `STAGE_B_STARTED`
+10. Stage B Section 1, Section 2, and Sections 3-5 freeze chains
+11. `SCORING_ENDED`
+12. `DEBRIEF_INPUT_MANIFEST_VERIFIED`
+13. `DEBRIEF_COMPLETED`
+14. `STAGE_B_ENDED`
+15. `RUN_RESULTS_COMPLETED`
+16. `LOG_CLOSED`
+
+Debrief access before scoring end, a missing boundary, or log close before
+immutable results is a stop and deviation. Six scored freeze chains do not
+substitute for the full route.
 
 ## Declared participant-input inventory
 
@@ -84,6 +110,16 @@ and actor on every `*_MANIFEST_VERIFIED` row.
   surface exposed: no / deviation ID
 - Gaps, reversals, failed commands, or access deviations:
 - Facilitator signature/code and completion timestamp/timezone:
+
+## Run close and later external closeout
+
+Complete and hash the immutable run-specific results, then record
+`RUN_RESULTS_COMPLETED` before `LOG_CLOSED`. Neither the results nor this log
+may predict or embed the future final closed-log hash. After closure, validate
+the log, copy it byte-identically into `closeout/input`, and create the external
+closeout manifest and record. That external closeout binds the observed closed-
+log hash, results hash, and closeout-manifest hash outside this already closed
+log.
 
 This log can show what the facilitator recorded for one attempt. It does not
 prove participant understanding, architecture correctness, safety, or business

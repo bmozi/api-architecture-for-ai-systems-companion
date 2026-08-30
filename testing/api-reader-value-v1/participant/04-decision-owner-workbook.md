@@ -1,9 +1,9 @@
 # Stage B Decision-Owner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank independent read-back record
 
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+**Revision note:** Version 1.2.5 adds explicit scoring, debrief, and Stage B boundaries while preserving version 1.2.4's exact immutable Stage A live-update
 input and preserves version 1.2.3's replay, chronology, and access-log
 controls. It remains unrun with people.
 
@@ -11,7 +11,7 @@ controls. It remains unrun with people.
 - Broad role and experience band, optional:
 - One-screen handoff ID/version:
 - Stage A exact detailed filenames, IDs/versions, and hashes:
-- Stage start recorded before first file read, with timezone, and end time:
+- Stage start recorded before first file read, with timezone:
 - Exact file-open order:
 - Sealed Stage B input manifest:
 - Undeclared orchestration, facilitator, hidden-prompt, or run-note file
@@ -129,13 +129,12 @@ the later detached record before Section 6 opens.
 
 ## 6. Debrief after scoring
 
-Keep this section closed until the facilitator confirms that Sections 1, 2,
-and 3-5 have verified detached freeze records, their next-phase input manifests
-verify, and scoring has ended.
-
-- Stage A explanation that changed your interpretation:
-- Decision changed after discussion:
-- Why:
+This heading is a route reminder, not the debrief input. After Sections 1, 2,
+and 3-5 have completed their detached freezes and `SCORING_ENDED` is recorded,
+the facilitator verifies the debrief-phase input manifest and releases the
+separate exact `07-section-6-debrief.md` input. Export that completed debrief as
+`API-B-SECTION-6-DEBRIEF-v1.md`. Do not edit or upgrade any frozen scored
+export or score during debrief.
 
 ## Frozen-artifact correction register
 

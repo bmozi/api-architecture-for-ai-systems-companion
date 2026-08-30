@@ -1,9 +1,9 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Fictional, prepared, and unrun
 
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+**Revision note:** Version 1.2.5 preserves version 1.2.4's exact immutable Stage A live-update
 file into the revision-phase input manifest. It preserves version 1.2.3's
 replay identity, verification chronology, and external access logging and
 remains unrun with people.

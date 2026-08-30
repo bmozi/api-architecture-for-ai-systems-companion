@@ -1,10 +1,10 @@
 # Temporal Freeze Protocol and Record Templates
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Facilitator-only static validation note and blank run-record schema;
 prepared and unrun
 
-Version 1.2.4 extends the machine-readable protocol and mutation suite so the
+Version 1.2.5 extends the schema-3 protocol with full-route closure while preserving version 1.2.4's machine-readable protocol and mutation suite so the
 exact immutable `API-A-LIVE-UPDATE-v1.md` is a route-declared participant input
 bound into the revision phase. It preserves version 1.2.3's attempt, phase,
 actor, facilitator, exact verification command/output/exit/time/timezone, later
@@ -12,6 +12,12 @@ record-completion timestamp/timezone, and execution-history controls. The
 facilitator separately maintains the
 [`execution and access log`](05-execution-and-access-log.md). Passing static
 checks remains non-human evidence only.
+
+Schema 3 now also declares exactly one human-consent or synthetic-context
+entry branch, explicit Stage A and Stage B boundaries, scoring end, manifested
+Section 6 debrief, immutable results before log close, later external closeout,
+and the proof-gated one-page handoff target. These are full-route gates outside
+the six scored freeze chains.
 
 ## Static protocol finding
 
@@ -80,6 +86,31 @@ file is opened:
 The live-update bytes are canonical participant input, not facilitator speech
 to reconstruct later. The planned revision remains distinct from a correction
 of already frozen revised bytes.
+
+This exact five-member manifest remains immutable in version 1.2.5. None of
+the entry, debrief, results, closeout, or layout records may be inserted into,
+renamed within, or substituted for one of its five members.
+
+## Full-route records outside the six freezes
+
+- Select exactly one run-specific human-consent or synthetic-context record;
+  verify it through the two stage context manifests.
+- After the handoff freeze, complete `API-A-MATERIAL-FEEDBACK-v1.md`, record
+  `STAGE_A_FEEDBACK_COMPLETED`, then `STAGE_A_ENDED` in the facilitator log.
+- After the Sections 3-5 freeze, record `SCORING_ENDED`; verify the four-member
+  `API-B-PHASE-4-DEBRIEF-INPUT-SHA256SUMS-v1.txt`; complete
+  `API-B-SECTION-6-DEBRIEF-v1.md`; then record `DEBRIEF_COMPLETED` and
+  `STAGE_B_ENDED`.
+- Complete `API-RUN-RESULTS-<ATTEMPT-ID>-v1.md` with state
+  `RUN RESULTS COMPLETE` before `LOG_CLOSED`. Never predict the final log hash
+  or future closeout timestamp.
+- After close, validate and copy the log byte-identically, create
+  `API-RUN-CLOSEOUT-SHA256SUMS-v1.txt`, and complete the later external
+  closeout record binding log, manifest, and results hashes.
+- A favorable one-page claim requires the completed US Letter layout proof;
+  local layout is not human comprehension.
+
+Six scored freeze chains complete is not full-route completion.
 
 ## Detached verification-record schema
 

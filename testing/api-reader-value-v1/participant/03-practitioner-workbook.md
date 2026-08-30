@@ -1,16 +1,17 @@
 # Stage A Practitioner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank participant record
 
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
-file into the revision-phase input manifest. It preserves version 1.2.3's
+**Revision note:** Version 1.2.5 adds explicit Stage A boundaries while
+preserving version 1.2.4's exact immutable Stage A live-update binding in the
+revision-phase input manifest. It preserves version 1.2.3's
 replay identity, verification chronology, and external access logging and
 remains unrun with people.
 
 - Participant code:
 - Broad role and experience band, optional:
-- Stage start recorded before first file read, with timezone, and end time:
+- Stage start recorded before first file read, with timezone:
 - Exact file-open order:
 - Frozen supplied-file manifest:
 - Undeclared orchestration, facilitator, hidden-prompt, or run-note file
@@ -121,11 +122,3 @@ If any revised frozen byte later changes, preserve the old file and record the
 exact old/new immutable filenames, IDs/versions, hashes, reason, correction
 timestamp/timezone, replacement detached verification record, and replacement manifest. Do
 not describe that post-freeze correction as the planned live-update revision.
-
-## 7. Material feedback
-
-- Prompt that changed your thinking:
-- Term or field that was unclear:
-- Important decision the materials missed:
-- Any prompt that pushed you toward an unsupported answer:
-- What this exercise cannot establish:

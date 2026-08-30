@@ -1,18 +1,28 @@
 # One-Screen Stage A Handoff
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank; open only after the revised-detail governing manifest has
 verified, its detached verification record exists, and the handoff-phase input
 manifest verifies
-**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+**Revision note:** Version 1.2.5 adds a proof-gated one-page contract while preserving version 1.2.4's exact immutable Stage A live-update
 input and preserves version 1.2.3's replay, chronology, and access-log
 controls. It remains unrun with people.
 
-Keep this handoff to one page. Link detail instead of repeating it. Use
-`UNKNOWN` rather than guessing. An owner may be `UNASSIGNED`; do not invent an
-assignment or date. Complete this as `API-A-ONE-SCREEN-HANDOFF-v1.md` only
+The declared local target is US Letter portrait, exactly one page, margins of
+at least 0.5 inch, body and table text of at least 9 points, no more than 450
+reader-facing words excluding immutable provenance, and no clipping, overlap,
+hidden overflow, or unreadable shrinking. Link detail instead of repeating it.
+Use `UNKNOWN` rather than guessing. An owner may be `UNASSIGNED`; do not invent
+an assignment or date. Complete this as `API-A-ONE-SCREEN-HANDOFF-v1.md` only
 after `API-A-REVISED-FREEZE-VERIFICATION-v1.md` exists and the sealed
 handoff-phase input manifest verifies.
+
+Do not claim `LAYOUT PASSED` inside this governed handoff. After its freeze,
+the facilitator must preserve the Markdown, PDF, page count, rendering command,
+tool versions, PDF SHA-256, and clipping/overlap findings in
+`API-A-HANDOFF-LAYOUT-PROOF-<ATTEMPT-ID>-v1.md`. A favorable `LAYOUT PASSED`
+claim requires every proof row to pass. Layout evidence is not human
+scanability, comprehension, usefulness, safety, or business-value evidence.
 
 - Handoff ID/version:
 - Handoff completion timestamp/timezone:

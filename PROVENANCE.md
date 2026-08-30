@@ -140,3 +140,22 @@ and which validation or usability state actually changed.
   even when surrounding hashes are refreshed
 - **Execution state:** `PREPARED/UNRUN`; no human participant, usability,
   architecture, safety, production, cost, or business-value result exists
+
+## 2026-08-30 synthetic execution closure v1.2.5
+
+- **Authority:** Governing cross-guide synthetic execution and closure standard
+- **Preserved:** schema-3 exact five-member Stage A revision binding, canonical
+  `API-A-LIVE-UPDATE-v1.md` bytes, six scored freeze chains, and all 21 legacy
+  adversarial regressions
+- **Added:** mutually exclusive run-specific human-consent and synthetic-
+  context entry branches without fictional consent; Stage A start/feedback/end
+  and Stage B start/scoring-end/debrief/end boundaries; immutable results before
+  log close; later external closeout; and a proof-gated one-page US Letter
+  handoff contract
+- **Enforcement:** checksum-refreshed mutations reject branch omission/mixing,
+  synthetic human claims, missing or reordered boundaries, debrief before
+  scoring, missing results/closeout, premature close, predicted future log
+  hashes, and favorable layout claims without proof
+- **Execution state:** human evidence remains `PREPARED/UNRUN`; real-world
+  evidence remains `UNRUN`. Static and synthetic checks establish no
+  comprehension, API correctness, safety, production, cost, or business value

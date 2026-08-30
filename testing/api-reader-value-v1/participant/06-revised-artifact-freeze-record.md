@@ -1,10 +1,10 @@
 # Revised Artifact Freeze-Verification Record
 
-**Packet:** API-RV-PILOT-001 version 1.2.4
+**Packet:** API-RV-PILOT-001 version 1.2.5
 **Status:** Blank detached record; create only after the revised governing
 manifest has been created and verified
 
-**Revision note:** Version 1.2.4 binds the exact immutable
+**Revision note:** Version 1.2.5 preserves version 1.2.4's exact immutable
 `API-A-LIVE-UPDATE-v1.md` into the verified revision-phase input manifest and
 preserves version 1.2.3's replay and chronology controls. It remains unrun with
 people.

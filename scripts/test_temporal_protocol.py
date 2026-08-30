@@ -306,6 +306,100 @@ def mutate_live_update_wording_drift(repo: Path) -> None:
     write_protocol(repo, protocol)
 
 
+def mutate_entry_branch_omission(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    protocol["entry_branches"]["selection_required"] = False
+    write_protocol(repo, protocol)
+
+
+def mutate_entry_branch_mixing(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    protocol["entry_branches"]["mutually_exclusive"] = False
+    write_protocol(repo, protocol)
+
+
+def mutate_synthetic_human_claim(repo: Path) -> None:
+    update_critical_document(
+        repo,
+        "participant/01-synthetic-context-record.md",
+        lambda content: content + "\nHuman consent obtained.\n",
+    )
+
+
+def remove_full_route_event(event: str) -> Callable[[Path], None]:
+    def mutation(repo: Path) -> None:
+        protocol = load_protocol(repo)
+        protocol["full_route_closure"]["required_boundary_events"].remove(event)
+        write_protocol(repo, protocol)
+
+    return mutation
+
+
+def mutate_debrief_before_scoring(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    events = protocol["full_route_closure"]["required_boundary_events"]
+    scoring_index = events.index("SCORING_ENDED")
+    debrief_index = events.index("DEBRIEF_INPUT_MANIFEST_VERIFIED")
+    events[scoring_index], events[debrief_index] = (
+        events[debrief_index],
+        events[scoring_index],
+    )
+    write_protocol(repo, protocol)
+
+
+def mutate_missing_results_identity(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    protocol["full_route_closure"]["results"].pop("artifact_id")
+    write_protocol(repo, protocol)
+
+
+def mutate_premature_log_close(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    events = protocol["full_route_closure"]["required_boundary_events"]
+    results_index = events.index("RUN_RESULTS_COMPLETED")
+    close_index = events.index("LOG_CLOSED")
+    events[results_index], events[close_index] = events[close_index], events[results_index]
+    write_protocol(repo, protocol)
+
+
+def mutate_predicted_final_log_hash(repo: Path) -> None:
+    update_critical_document(
+        repo,
+        "facilitator-only/03-results-and-deviation-log.md",
+        lambda content: content + "\nFinal closed-log SHA-256: `PREDICTED`\n",
+    )
+
+
+def mutate_missing_external_closeout(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    protocol["full_route_closure"].pop("external_closeout")
+    write_protocol(repo, protocol)
+
+
+def mutate_layout_claim_without_proof(repo: Path) -> None:
+    protocol = load_protocol(repo)
+    protocol["handoff_layout_proof"][
+        "favorable_claim_requires_passing_proof"
+    ] = False
+    write_protocol(repo, protocol)
+
+
+def mutate_stage_a_future_end_field(repo: Path) -> None:
+    update_critical_document(
+        repo,
+        "participant/03-practitioner-workbook.md",
+        lambda content: content + "\n- Stage end timestamp/timezone:\n",
+    )
+
+
+def mutate_stage_b_future_end_field(repo: Path) -> None:
+    update_critical_document(
+        repo,
+        "participant/04-decision-owner-workbook.md",
+        lambda content: content + "\n- Stage B end timestamp/timezone:\n",
+    )
+
+
 def main() -> int:
     baseline = run_validator(ROOT)
     if baseline.returncode != 0:
@@ -414,13 +508,86 @@ def main() -> int:
             mutate_unmanifested_byte,
             "checksum mismatch",
         ),
+        (
+            "entry-branch-omission",
+            mutate_entry_branch_omission,
+            "entry branches are incomplete, mixed, or stale",
+        ),
+        (
+            "entry-branch-mixing",
+            mutate_entry_branch_mixing,
+            "entry branches are incomplete, mixed, or stale",
+        ),
+        (
+            "synthetic-human-claim",
+            mutate_synthetic_human_claim,
+            "synthetic context claims human consent or human results",
+        ),
+        *[
+            (
+                f"missing-full-route-{event.casefold().replace('_', '-')}",
+                remove_full_route_event(event),
+                "full-route closure is incomplete or stale",
+            )
+            for event in (
+                "STAGE_A_STARTED",
+                "STAGE_A_FEEDBACK_COMPLETED",
+                "STAGE_A_ENDED",
+                "STAGE_B_STARTED",
+                "SCORING_ENDED",
+                "DEBRIEF_INPUT_MANIFEST_VERIFIED",
+                "DEBRIEF_COMPLETED",
+                "STAGE_B_ENDED",
+                "RUN_RESULTS_COMPLETED",
+            )
+        ],
+        (
+            "debrief-before-scoring",
+            mutate_debrief_before_scoring,
+            "full-route closure is incomplete or stale",
+        ),
+        (
+            "missing-results-identity",
+            mutate_missing_results_identity,
+            "full-route closure is incomplete or stale",
+        ),
+        (
+            "premature-log-close",
+            mutate_premature_log_close,
+            "full-route closure is incomplete or stale",
+        ),
+        (
+            "predicted-final-log-hash",
+            mutate_predicted_final_log_hash,
+            "run results predict the future closed-log hash",
+        ),
+        (
+            "missing-external-closeout",
+            mutate_missing_external_closeout,
+            "full-route closure is incomplete or stale",
+        ),
+        (
+            "layout-claim-without-proof",
+            mutate_layout_claim_without_proof,
+            "one-page handoff proof contract is incomplete or stale",
+        ),
+        (
+            "stage-a-future-end-field",
+            mutate_stage_a_future_end_field,
+            "future Stage end field in governed workbook",
+        ),
+        (
+            "stage-b-future-end-field",
+            mutate_stage_b_future_end_field,
+            "future Stage end field in governed workbook",
+        ),
     ]
     for name, mutation, expected in cases:
         assert_rejected(name, mutation, expected)
 
     print(
         "temporal protocol mutation tests passed: "
-        "1 clean positive control, 21 rejected mutations"
+        f"1 clean positive control, {len(cases)} rejected mutations"
     )
     return 0
 

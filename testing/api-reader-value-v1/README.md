@@ -1,12 +1,21 @@
 # API Reader-Value Pilot Packet
 
 **Packet ID:** API-RV-PILOT-001
-**Version:** 1.2.4
+**Version:** 1.2.5
 **Status:** `PREPARED/UNRUN` for human participants; no participant recruited or
 consented
 **Scenario:** Stonebridge Equipment Rental, entirely fictional
 
-Version 1.2.4 exports the canonical Stage A update as the exact immutable
+Version 1.2.5 adds explicit mutually exclusive human-consent and synthetic-
+context entry branches, both stage boundaries, scoring end, a manifested
+post-scoring Section 6 debrief, immutable run-specific results before log
+close, and later external closeout. These full-route boundaries remain
+separate from the six scored freeze chains. It also adds a proof-gated local
+one-page US Letter handoff contract; layout evidence is not comprehension.
+Human evidence remains `PREPARED/UNRUN` and real-world evidence remains
+`UNRUN`.
+
+Version 1.2.4 exported the canonical Stage A update as the exact immutable
 participant/run input `API-A-LIVE-UPDATE-v1.md` and requires the verified
 revision-phase input manifest to bind it alongside the frozen initial artifact
 set. It preserves version 1.2.3's non-self-referential freeze sequence,
@@ -34,6 +43,16 @@ tests the newer Agent-Ready API and MCP Capability Brief, role paths, failure
 lab, value ledger, and executive decision language.
 
 ## Sealed flat run inputs
+
+Create the facilitator-side execution/access log and record `RUN_STARTED`.
+Choose exactly one entry branch and record `ENTRY_BRANCH_SELECTED`: completed
+run-specific human consent records, or one immutable run-specific
+`API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`. Never omit or mix branches, and
+never fabricate consent. Verify the selected record in
+`API-STAGE-A-CONTEXT-SHA256SUMS-v1.txt` before Stage A and
+`API-STAGE-B-CONTEXT-SHA256SUMS-v1.txt` before Stage B. Any added synthetic
+orchestration must be frozen and verified in `ORCHESTRATION-INPUT-SHA256SUMS`
+before use and remains outside participant input.
 
 Before either stage, copy the exact approved immutable files into a new sealed,
 flat stage-input directory. Preserve every literal filename below. Do not
@@ -71,12 +90,15 @@ relabel the prior evidence.
 
 ### Stage A — practitioner
 
-Record setup start before the consent notice is first opened. Complete consent
-before scored work. Then record the Stage A start and timezone before the route
-is opened and follow its exact order. Supply only these exact local filenames:
+For the human branch, record setup start before the consent notice opens and
+complete consent before scored work. For either branch, verify the Stage A
+context manifest, record `STAGE_A_STARTED` and the exact start/timezone before
+the route opens, and follow its exact order. Supply only these exact local
+filenames:
 
-1. [Consent and privacy notice](participant/01-consent-and-privacy.md), during
-   setup rather than as scored architecture work
+1. the selected run-specific [human consent](participant/01-consent-and-privacy.md)
+   or [synthetic context](participant/01-synthetic-context-record.md) record,
+   never both
 2. `00-packet-route.md`
 3. `02-scenario-and-task.md`
 4. `03-practitioner-workbook.md`
@@ -86,7 +108,8 @@ is opened and follow its exact order. Supply only these exact local filenames:
 8. only after the revision-phase input manifest verifies,
    `API-A-LIVE-UPDATE-v1.md`;
 9. after the live-update revision, `06-revised-artifact-freeze-record.md`; and
-10. only after that record verifies, the blank `05-one-screen-handoff.md`.
+10. only after that record verifies, the blank `05-one-screen-handoff.md`; and
+11. after the handoff freeze, `08-stage-a-material-feedback.md`.
 
 The short generic examples already embedded in supplied files are allowed.
 Do not follow their links to the Northbridge miniature, any comprehensive or
@@ -132,14 +155,20 @@ and then create `API-A-HANDOFF-FREEZE-VERIFICATION-v1.md`. The Stage B phase-1
 input manifest must hash the handoff, its governing manifest, and its detached
 verification record.
 
+After the handoff detached record, complete
+`API-A-MATERIAL-FEEDBACK-v1.md` from the separate feedback template and record
+`STAGE_A_FEEDBACK_COMPLETED`. Then record `STAGE_A_ENDED` and the exact end in
+the facilitator log. Do not change the frozen workbook or handoff.
+
 ### Stage B — independent decision owner
 
-Record setup start before the consent notice is first opened. Complete consent,
-then record the Stage B start and timezone before the route is opened. Build a
+For the human branch, complete the Stage B participant's separate consent. For
+either branch, verify the Stage B context manifest and record
+`STAGE_B_STARTED` and exact start/timezone before the route opens. Build a
 separate sealed flat Stage B input and supply in the route's exact order:
 
-1. [Consent and privacy notice](participant/01-consent-and-privacy.md), during
-   setup;
+1. the applicable same-branch human consent or synthetic context record, never
+   both;
 2. `00-packet-route.md`;
 3. `API-A-ONE-SCREEN-HANDOFF-v1.md` as the first substantive decision content,
    plus its governing manifest and detached verification record as sealed
@@ -151,7 +180,9 @@ separate sealed flat Stage B input and supply in the route's exact order:
    `API-A-REVISED-WORKBOOK-v1.md`, and
    `API-A-REVISED-CAPABILITY-BRIEF-v1.md`;
 6. after the Section 2 freeze, `EXECUTIVE-DECISION-BRIEF.md`; and
-7. `VALUE-AND-EVIDENCE-LEDGER.md`.
+7. `VALUE-AND-EVIDENCE-LEDGER.md`; and
+8. only after `SCORING_ENDED` and verified debrief input,
+   `07-section-6-debrief.md`.
 
 The handoff's literal detail inventory, detached record, governing manifest,
 and delivered Stage B files must match exactly. A rename, regenerated copy,
@@ -171,6 +202,28 @@ and the debrief-phase input manifest seals the last export, manifest, and
 record. Do not let the Stage A participant explain or repair an artifact before
 then.
 
+After the three Stage B scored freezes, record `SCORING_ENDED`; verify the
+four-member debrief manifest, complete `API-B-SECTION-6-DEBRIEF-v1.md`, and
+record `DEBRIEF_COMPLETED` and `STAGE_B_ENDED`. Complete and hash immutable
+run-specific results before `RUN_RESULTS_COMPLETED`, append `LOG_CLOSED` only
+afterward, and create the later external closeout binding. The six scored
+freeze chains do not substitute for full-route closure.
+
+Render the frozen handoff to US Letter portrait and complete the run-specific
+layout proof. A favorable `LAYOUT PASSED` claim requires exactly one page,
+margins at least 0.5 inch, body/table type at least 9 points, no more than 450
+reader-facing words excluding immutable provenance, and no clipping, overlap,
+hidden overflow, or unreadable shrinking. This local proof is not evidence of
+human comprehension or scanability.
+
+After Stage B ends, create `API-RUN-RESULTS-<ATTEMPT-ID>-v1.md` with identity
+`API-RUN-RESULTS` / `v1` and state `RUN RESULTS COMPLETE`. Preserve the exact
+five-member manifest finding, all six scored chains, stage/debrief boundaries,
+counts, negative findings, and separate protocol/synthetic/layout/human/real-
+world states. It must not predict a final log hash or future closeout time.
+Record `RUN_RESULTS_COMPLETED` before `LOG_CLOSED`; then bind the observed
+closed-log and results hashes through the later external closeout template.
+
 ## Facilitator only
 
 - [Facilitator guide](facilitator-only/01-facilitator-guide.md)
@@ -178,6 +231,8 @@ then.
 - [Results and deviation log](facilitator-only/03-results-and-deviation-log.md)
 - [Temporal freeze protocol and record templates](facilitator-only/04-temporal-freeze-protocol-and-record-templates.md)
 - [Execution and access log](facilitator-only/05-execution-and-access-log.md)
+- [Handoff layout proof record](facilitator-only/06-handoff-layout-proof-record.md)
+- [External closeout record](facilitator-only/07-external-closeout-record.md)
 
 Never supply these files before either scored stage ends.
 

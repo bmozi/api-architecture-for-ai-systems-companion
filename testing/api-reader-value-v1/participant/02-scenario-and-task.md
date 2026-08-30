@@ -1,11 +1,12 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Fictional, prepared, and unrun
 
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
-unrun with people.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+file into the revision-phase input manifest. It preserves version 1.2.3's
+replay identity, verification chronology, and external access logging and
+remains unrun with people.
 
 Stonebridge Equipment Rental rents generators and tools through its own service
 desk and partner marketplaces. A customer wants to keep generator `SR-4821`
@@ -69,8 +70,11 @@ Without discussing the intended answer with a facilitator:
 
 ## Live update
 
-The facilitator will provide one update after the initial artifact is frozen.
-Revise only after hearing it. Record the original and revised answer.
+After the initial artifact is frozen, the facilitator verifies
+`API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`. Only then open the exact
+immutable `API-A-LIVE-UPDATE-v1.md`. Revise only after reading that manifested
+file, and record its contents exactly plus the original and revised answer. A
+renamed, omitted, regenerated, summarized, or unmanifested update is a stop.
 
 That planned revision creates the first revised artifact set. It is not a
 later correction of already frozen revised bytes.

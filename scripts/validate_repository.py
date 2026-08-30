@@ -21,6 +21,13 @@ PACKET_VERSION_PATTERN = re.compile(r"^\*\*Version:\*\*\s*(\S+)\s*$", re.MULTILI
 PACKET_HEADER_PATTERN = re.compile(
     r"^\*\*Packet:\*\*\s*(\S+)\s+version\s+(\S+)\s*$", re.MULTILINE
 )
+TEMPORAL_SCHEMA_VERSION = 3
+LIVE_UPDATE_FILENAME = "API-A-LIVE-UPDATE-v1.md"
+LIVE_UPDATE_PATH = f"participant/{LIVE_UPDATE_FILENAME}"
+REVISION_PHASE_ID = "stage_a_revision"
+REVISION_PRIOR_RELEASE = "stage_a_initial"
+REVISION_OPENS_RELEASE = "stage_a_revised"
+REVISION_MANIFEST = "API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt"
 TEMPORAL_ORDER = [
     "completed_artifacts",
     "artifact_only_manifest",
@@ -172,6 +179,27 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def canonical_blockquote(content: str, start: str, end: str) -> str | None:
+    if content.count(start) != 1 or content.count(end) != 1:
+        return None
+    _, remainder = content.split(start, 1)
+    block, _ = remainder.split(end, 1)
+    lines = block.strip("\n").splitlines()
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    extracted: list[str] = []
+    for line in lines:
+        if line == ">":
+            extracted.append("")
+        elif line.startswith("> "):
+            extracted.append(line[2:])
+        else:
+            return None
+    return "\n".join(extracted) + "\n"
+
+
 def temporal_target(packet_dir: Path, raw: object, field: str, errors: list[str]) -> Path | None:
     if not isinstance(raw, str) or not raw:
         errors.append(f"temporal protocol: {field} must be a non-empty relative path")
@@ -219,8 +247,10 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
         packet_dir = protocol_path.parent
         packet_id = protocol.get("packet_id")
         packet_version = protocol.get("packet_version")
-        if protocol.get("schema_version") != 2:
-            errors.append(f"{prefix} schema_version must be 2")
+        if protocol.get("schema_version") != TEMPORAL_SCHEMA_VERSION:
+            errors.append(
+                f"{prefix} schema_version must be {TEMPORAL_SCHEMA_VERSION}"
+            )
         if not isinstance(packet_id, str) or not packet_id:
             errors.append(f"{prefix} packet_id must be a non-empty string")
         if not isinstance(packet_version, str) or not re.fullmatch(r"\d+\.\d+\.\d+", packet_version):
@@ -299,6 +329,113 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 f"{prefix} next release must bind artifact, governing manifest, and detached record"
             )
 
+        revision_input = protocol.get("revision_phase_input")
+        live_update_relative: str | None = None
+        if not isinstance(revision_input, dict):
+            errors.append(f"{prefix} revision_phase_input must be an object")
+            revision_input = {}
+        else:
+            if revision_input.get("id") != REVISION_PHASE_ID:
+                errors.append(f"{prefix} revision phase input has invalid identity")
+            if revision_input.get("prior_release") != REVISION_PRIOR_RELEASE:
+                errors.append(
+                    f"{prefix} revision phase input must bind stage_a_initial"
+                )
+            if revision_input.get("opens_release") != REVISION_OPENS_RELEASE:
+                errors.append(
+                    f"{prefix} revision phase input must open stage_a_revised"
+                )
+            if revision_input.get("manifest") != REVISION_MANIFEST:
+                errors.append(
+                    f"{prefix} revision phase input manifest must be {REVISION_MANIFEST}"
+                )
+            if revision_input.get("manifest_verified_before_open") is not True:
+                errors.append(
+                    f"{prefix} revision phase manifest must verify before live-update open"
+                )
+
+            live_update = revision_input.get("immutable_participant_input")
+            if not isinstance(live_update, dict):
+                errors.append(
+                    f"{prefix} immutable live-update participant input must be an object"
+                )
+            else:
+                if live_update.get("filename") != LIVE_UPDATE_FILENAME:
+                    errors.append(
+                        f"{prefix} immutable live-update filename must be "
+                        f"{LIVE_UPDATE_FILENAME}"
+                    )
+                if live_update.get("path") != LIVE_UPDATE_PATH:
+                    errors.append(
+                        f"{prefix} immutable live-update path must be {LIVE_UPDATE_PATH}"
+                    )
+                live_update_relative = live_update.get("path")
+                live_path = temporal_target(
+                    packet_dir,
+                    live_update_relative,
+                    "immutable live-update participant input",
+                    errors,
+                )
+                live_hash = live_update.get("sha256")
+                if not isinstance(live_hash, str) or not re.fullmatch(
+                    r"[0-9a-f]{64}", live_hash
+                ):
+                    errors.append(f"{prefix} invalid immutable live-update SHA-256")
+                elif (
+                    live_path
+                    and live_path.is_file()
+                    and sha256(live_path) != live_hash
+                ):
+                    errors.append(
+                        f"{prefix} immutable live-update participant input hash mismatch"
+                    )
+                if live_path and not live_path.is_file():
+                    errors.append(
+                        f"{prefix} missing immutable live-update participant input: "
+                        f"{LIVE_UPDATE_PATH}"
+                    )
+
+                canonical_source = live_update.get("canonical_facilitator_source")
+                if canonical_source != "facilitator-only/01-facilitator-guide.md":
+                    errors.append(
+                        f"{prefix} immutable live-update canonical source is invalid"
+                    )
+                canonical_path = temporal_target(
+                    packet_dir,
+                    canonical_source,
+                    "live-update canonical facilitator source",
+                    errors,
+                )
+                start_marker = live_update.get("canonical_start_marker")
+                end_marker = live_update.get("canonical_end_marker")
+                if not isinstance(start_marker, str) or not start_marker:
+                    errors.append(f"{prefix} live-update canonical start marker is missing")
+                if not isinstance(end_marker, str) or not end_marker:
+                    errors.append(f"{prefix} live-update canonical end marker is missing")
+                if (
+                    canonical_path
+                    and canonical_path.is_file()
+                    and live_path
+                    and live_path.is_file()
+                    and isinstance(start_marker, str)
+                    and isinstance(end_marker, str)
+                ):
+                    canonical = canonical_blockquote(
+                        canonical_path.read_text(encoding="utf-8"),
+                        start_marker,
+                        end_marker,
+                    )
+                    if canonical is None:
+                        errors.append(
+                            f"{prefix} canonical facilitator live-update block is missing "
+                            "or malformed"
+                        )
+                    elif live_path.read_text(encoding="utf-8") != canonical:
+                        errors.append(
+                            f"{prefix} immutable live-update participant input differs "
+                            "from canonical facilitator wording"
+                        )
+
         correction = protocol.get("correction_policy")
         if not isinstance(correction, dict):
             errors.append(f"{prefix} correction_policy must be an object")
@@ -343,6 +480,9 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 version_match = PACKET_VERSION_PATTERN.search(content)
                 found_id = id_match.group(1) if id_match else None
                 found_version = version_match.group(1) if version_match else None
+            elif relative_to_packet == live_update_relative:
+                found_id = packet_id
+                found_version = packet_version
             else:
                 header_match = PACKET_HEADER_PATTERN.search(content)
                 found_id = header_match.group(1) if header_match else None
@@ -374,6 +514,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "exact manifest-verification command/output/exit/time/timezone",
                 "`ORCHESTRATION.md`",
                 "execution and access log",
+                "`API-A-LIVE-UPDATE-v1.md`",
+                "five-member manifest",
             ],
             "participant/00-packet-route.md": [
                 "For every detached verification record named below",
@@ -381,6 +523,18 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "complete observed output",
                 "later record-completion timestamp and timezone",
                 "`ORCHESTRATION.md`",
+                "`API-A-LIVE-UPDATE-v1.md`",
+                "Omission, rename, regeneration, summary, or hash mismatch",
+            ],
+            "participant/02-scenario-and-task.md": [
+                "`API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`",
+                "`API-A-LIVE-UPDATE-v1.md`",
+                "renamed, omitted, regenerated, summarized, or unmanifested update",
+            ],
+            "participant/03-practitioner-workbook.md": [
+                "Revision-phase input manifest exact filename and SHA-256",
+                "Live-update input exact filename: `API-A-LIVE-UPDATE-v1.md`",
+                "Exact live-update contents",
             ],
             "participant/06-revised-artifact-freeze-record.md": [
                 "- Attempt ID:",
@@ -395,6 +549,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "- Record-completing actor name/code:",
                 "- Record completion timestamp, explicitly later than manifest verification:",
                 "- Record completion timezone:",
+                "- Live-update participant input exact filename: `API-A-LIVE-UPDATE-v1.md`",
+                "Revision-phase input manifest includes both initial artifacts",
             ],
             "facilitator-only/01-facilitator-guide.md": [
                 "execution and access log",
@@ -402,6 +558,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "exact verification command, complete observed output, exit code",
                 "explicit later record-completion timestamp and timezone",
                 "undeclared `ORCHESTRATION.md`",
+                "exact immutable `API-A-LIVE-UPDATE-v1.md`",
+                "five-member manifest",
             ],
             "facilitator-only/02-observation-and-scoring-rubric.md": [
                 "Detached-record replay identity",
@@ -414,6 +572,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "Detached-record required-field audit",
                 "Complete observed output",
                 "Later record-completion timestamp/timezone",
+                "Immutable live-update participant input exact filename/hash",
+                "exact live-update input: yes / no / deviation",
             ],
             "facilitator-only/04-temporal-freeze-protocol-and-record-templates.md": [
                 "- Attempt ID:",
@@ -424,6 +584,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "- Record completion timestamp, explicitly later than verification:",
                 "- Record completion timezone:",
                 "Any blank required field prevents `FROZEN`",
+                "Exact Stage A revision-phase input inventory",
+                "`API-A-LIVE-UPDATE-v1.md`",
             ],
             "facilitator-only/05-execution-and-access-log.md": [
                 "Keep this log outside every sealed participant input",
@@ -433,6 +595,7 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "NEXT_PHASE_GATE_OPENED",
                 "Complete observed output",
                 "Continuity binding",
+                "exact `API-A-LIVE-UPDATE-v1.md`",
             ],
         }
         for document, clauses in required_document_clauses.items():
@@ -476,6 +639,48 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
         release_ids = [item.get("id") for item in releases if isinstance(item, dict)]
         if release_ids != RELEASE_IDS:
             errors.append(f"{prefix} release_chains must contain all six releases in order")
+
+        release_map = {
+            item.get("id"): item for item in releases if isinstance(item, dict)
+        }
+        initial_release = release_map.get(REVISION_PRIOR_RELEASE)
+        if isinstance(initial_release, dict):
+            initial_artifacts = initial_release.get("artifacts")
+            initial_names: list[str] = []
+            if isinstance(initial_artifacts, list):
+                initial_names = [
+                    artifact.get("filename")
+                    for artifact in initial_artifacts
+                    if isinstance(artifact, dict)
+                    and isinstance(artifact.get("filename"), str)
+                ]
+            expected_revision_members = [
+                *initial_names,
+                initial_release.get("governing_manifest"),
+                initial_release.get("detached_record"),
+                LIVE_UPDATE_FILENAME,
+            ]
+            if revision_input.get("manifest") != initial_release.get(
+                "next_release_manifest"
+            ):
+                errors.append(
+                    f"{prefix} revision phase manifest is not bound to "
+                    "stage_a_initial next release"
+                )
+            if revision_input.get("required_members") != expected_revision_members:
+                errors.append(
+                    f"{prefix} revision phase input must bind exact prior release "
+                    "and immutable live-update members"
+                )
+            if initial_release.get("next_release_additional_inputs") != [
+                LIVE_UPDATE_FILENAME
+            ]:
+                errors.append(
+                    f"{prefix} stage_a_initial next release must declare exact "
+                    "immutable live-update input"
+                )
+        else:
+            errors.append(f"{prefix} revision phase prior release is missing")
 
         results_path = temporal_target(packet_dir, protocol.get("results_log"), "results_log", errors)
         inventory_path = temporal_target(
@@ -528,6 +733,23 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
             manifest_name = item.get("governing_manifest")
             record_name = item.get("detached_record")
             next_name = item.get("next_release_manifest")
+            additional_inputs = item.get("next_release_additional_inputs", [])
+            if not isinstance(additional_inputs, list) or not all(
+                isinstance(value, str) and value for value in additional_inputs
+            ):
+                errors.append(
+                    f"{prefix} {release_id} next_release_additional_inputs must "
+                    "be a list of filenames"
+                )
+                additional_inputs = []
+            if (
+                release_id != REVISION_PRIOR_RELEASE
+                and LIVE_UPDATE_FILENAME in additional_inputs
+            ):
+                errors.append(
+                    f"{prefix} immutable live update is bound to the wrong release: "
+                    f"{release_id}"
+                )
             for field, value in [
                 ("governing_manifest", manifest_name),
                 ("detached_record", record_name),
@@ -541,7 +763,12 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 seen_release_files.add(value)
             release_filenames = [
                 *names,
-                *[value for value in [manifest_name, record_name, next_name] if isinstance(value, str)],
+                *[
+                    value
+                    for value in [manifest_name, record_name, next_name]
+                    if isinstance(value, str)
+                ],
+                *additional_inputs,
             ]
             for doc_name, text in [("results log", results_text), ("static inventory", inventory_text)]:
                 row = next(

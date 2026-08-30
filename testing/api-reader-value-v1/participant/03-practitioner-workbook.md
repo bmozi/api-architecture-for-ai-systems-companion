@@ -1,11 +1,12 @@
 # Stage A Practitioner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank participant record
 
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
-unrun with people.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+file into the revision-phase input manifest. It preserves version 1.2.3's
+replay identity, verification chronology, and external access logging and
+remains unrun with people.
 
 - Participant code:
 - Broad role and experience band, optional:
@@ -49,6 +50,14 @@ can remain pending, and how a final result becomes trustworthy.
 ## 5. Live update
 
 Record the update exactly as supplied.
+
+- Revision-phase input manifest exact filename and SHA-256:
+  `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` /
+- Live-update input exact filename: `API-A-LIVE-UPDATE-v1.md`
+- Live-update SHA-256 from that verified manifest:
+- Exact filename and hash matched before the update was opened: yes / no /
+  deviation
+- Exact live-update contents:
 
 This is the planned live-update revision that creates the first revised set.
 It is not a correction of already frozen revised bytes.

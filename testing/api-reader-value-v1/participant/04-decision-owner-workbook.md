@@ -1,11 +1,11 @@
 # Stage B Decision-Owner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank independent read-back record
 
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
-unrun with people.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+input and preserves version 1.2.3's replay, chronology, and access-log
+controls. It remains unrun with people.
 
 - Reviewer code:
 - Broad role and experience band, optional:

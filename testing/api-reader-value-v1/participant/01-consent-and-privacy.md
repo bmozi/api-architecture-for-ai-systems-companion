@@ -1,11 +1,11 @@
 # Participant Consent and Privacy Notice
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank; no consent has been obtained
 
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
-unrun with people.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+input and preserves version 1.2.3's replay, chronology, and access-log
+controls. It remains unrun with people.
 
 ## Purpose
 

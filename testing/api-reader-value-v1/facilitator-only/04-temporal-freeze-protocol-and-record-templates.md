@@ -1,14 +1,15 @@
 # Temporal Freeze Protocol and Record Templates
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Facilitator-only static validation note and blank run-record schema;
 prepared and unrun
 
-Version 1.2.3 extends the machine-readable protocol and mutation suite to make
-the execution history auditable, not merely the final files. Every detached
-record now requires attempt, phase, actor, facilitator, exact verification
-command/output/exit/time/timezone, and a later record-completion
-timestamp/timezone. The facilitator separately maintains the
+Version 1.2.4 extends the machine-readable protocol and mutation suite so the
+exact immutable `API-A-LIVE-UPDATE-v1.md` is a route-declared participant input
+bound into the revision phase. It preserves version 1.2.3's attempt, phase,
+actor, facilitator, exact verification command/output/exit/time/timezone, later
+record-completion timestamp/timezone, and execution-history controls. The
+facilitator separately maintains the
 [`execution and access log`](05-execution-and-access-log.md). Passing static
 checks remains non-human evidence only.
 
@@ -51,12 +52,34 @@ Rules:
 
 | Freeze | Governed artifact(s) and required state | Governing manifest | Later detached verification record | Next-phase input manifest |
 | --- | --- | --- | --- | --- |
-| Stage A initial | `API-A-INITIAL-WORKBOOK-v1.md`; `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`; `INITIAL COMPLETE` | `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` | `API-A-INITIAL-FREEZE-VERIFICATION-v1.md` | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` |
+| Stage A initial | `API-A-INITIAL-WORKBOOK-v1.md`; `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`; `INITIAL COMPLETE` | `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` | `API-A-INITIAL-FREEZE-VERIFICATION-v1.md` | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`, also binding exact new input `API-A-LIVE-UPDATE-v1.md` |
 | Stage A revised | `API-A-REVISED-WORKBOOK-v1.md`; `API-A-REVISED-CAPABILITY-BRIEF-v1.md`; `REVISED COMPLETE` | `API-A-REVISED-ARTIFACTS-SHA256SUMS-v1.txt` | `API-A-REVISED-FREEZE-VERIFICATION-v1.md` | `API-A-HANDOFF-PHASE-INPUT-SHA256SUMS-v1.txt` |
 | Stage A handoff | `API-A-ONE-SCREEN-HANDOFF-v1.md`; `HANDOFF COMPLETE` | `API-A-HANDOFF-SHA256SUMS-v1.txt` | `API-A-HANDOFF-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-1-INPUT-SHA256SUMS-v1.txt` |
 | Stage B Section 1 | `API-B-SECTION-1-SCAN-v1.md`; `SECTION COMPLETE` | `API-B-SECTION-1-SHA256SUMS-v1.txt` | `API-B-SECTION-1-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-2-INPUT-SHA256SUMS-v1.txt` |
 | Stage B Section 2 | `API-B-SECTION-2-DETAIL-v1.md`; `SECTION COMPLETE` | `API-B-SECTION-2-SHA256SUMS-v1.txt` | `API-B-SECTION-2-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-3-INPUT-SHA256SUMS-v1.txt` |
 | Stage B Sections 3-5 | `API-B-SECTIONS-3-5-DECISION-v1.md`; `SECTION COMPLETE` | `API-B-SECTIONS-3-5-SHA256SUMS-v1.txt` | `API-B-SECTIONS-3-5-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-4-DEBRIEF-INPUT-SHA256SUMS-v1.txt` |
+
+## Exact Stage A revision-phase input inventory
+
+Create `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` over every and only the
+following five immutable local filenames, then verify it before the live-update
+file is opened:
+
+1. `API-A-INITIAL-WORKBOOK-v1.md`;
+2. `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`;
+3. `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt`;
+4. `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`; and
+5. `API-A-LIVE-UPDATE-v1.md`.
+
+- Revision-phase input manifest exact filename and SHA-256:
+- Live-update exact filename and SHA-256:
+- All five exact names and bytes matched before phase open: yes / no
+- Omission, rename, regenerated copy, summary, substitution, or unbound update:
+  none / stop and deviation
+
+The live-update bytes are canonical participant input, not facilitator speech
+to reconstruct later. The planned revision remains distinct from a correction
+of already frozen revised bytes.
 
 ## Detached verification-record schema
 

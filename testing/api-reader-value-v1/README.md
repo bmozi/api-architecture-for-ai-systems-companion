@@ -1,17 +1,20 @@
 # API Reader-Value Pilot Packet
 
 **Packet ID:** API-RV-PILOT-001
-**Version:** 1.2.3
+**Version:** 1.2.4
 **Status:** `PREPARED/UNRUN` for human participants; no participant recruited or
 consented
 **Scenario:** Stonebridge Equipment Rental, entirely fictional
 
-Version 1.2.3 preserves the non-self-referential freeze sequence and adds an
-auditable facilitator-side execution history. Detached records now require the
-attempt, phase, actors, facilitator, exact manifest-verification
-command/output/exit/time/timezone, and a later record-completion
-timestamp/timezone. That internal work was not a human or practitioner session
-and provides no usability, safety, architecture, or business-value validation.
+Version 1.2.4 exports the canonical Stage A update as the exact immutable
+participant/run input `API-A-LIVE-UPDATE-v1.md` and requires the verified
+revision-phase input manifest to bind it alongside the frozen initial artifact
+set. It preserves version 1.2.3's non-self-referential freeze sequence,
+auditable facilitator-side execution history, exact manifest-verification
+command/output/exit/time/timezone, and later record-completion chronology.
+This repair came from static and synthetic preflight, not a human or
+practitioner session, and provides no usability, safety, architecture, or
+business-value validation.
 
 The normative release inventory and invariants are in
 [`temporal-protocol.json`](temporal-protocol.json). The human instructions must
@@ -80,8 +83,10 @@ is opened and follow its exact order. Supply only these exact local filenames:
 5. `START-HERE.md`
 6. `agent-ready-api-and-mcp-capability-brief.md`
 7. `api-event-workflow-decision-tree.md`
-8. after the live-update revision, `06-revised-artifact-freeze-record.md`; and
-9. only after that record verifies, the blank `05-one-screen-handoff.md`.
+8. only after the revision-phase input manifest verifies,
+   `API-A-LIVE-UPDATE-v1.md`;
+9. after the live-update revision, `06-revised-artifact-freeze-record.md`; and
+10. only after that record verifies, the blank `05-one-screen-handoff.md`.
 
 The short generic examples already embedded in supplied files are allowed.
 Do not follow their links to the Northbridge miniature, any comprehensive or
@@ -93,9 +98,12 @@ brief as `API-A-INITIAL-WORKBOOK-v1.md` and
 `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`, each marked `INITIAL COMPLETE` with an
 ID/version and completion timestamp/timezone. Govern them with
 `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt`, verify it, and only then create
-`API-A-INITIAL-FREEZE-VERIFICATION-v1.md`. The sealed revision-phase manifest
-must hash the two initial artifacts, that governing manifest, and the detached
-verification record before the live update is delivered.
+`API-A-INITIAL-FREEZE-VERIFICATION-v1.md`. The sealed
+`API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` must hash the two initial
+artifacts, that governing manifest, the detached verification record, and the
+exact immutable `API-A-LIVE-UPDATE-v1.md`. Verify that five-member manifest
+before the live-update file is opened. An omitted, renamed, regenerated,
+summarized, or unmanifested update is a stop and deviation.
 
 The required revised detail filenames are:
 

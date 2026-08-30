@@ -1,10 +1,11 @@
 # Exact Participant Route
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Human execution:** `PREPARED/UNRUN`
-**Revision note:** Version 1.2.3 adds machine-enforced replay identity,
-verification-command evidence, record-completion chronology, and external
-access logging; it has no human or practitioner validation.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+file into the revision-phase input manifest. It preserves version 1.2.3's
+replay identity, verification chronology, and external access logging and has
+no human or practitioner validation.
 
 Use only the exact local files in the sealed flat input. Do not search the repository
 or open a link to an unlisted miniature, full worked or comprehensive example,
@@ -50,12 +51,17 @@ or missing chronological separation prevents `FROZEN` and stops release.
    timestamp/timezone, and `INITIAL COMPLETE` state inside each artifact before
    hashing. Create `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` over only those
    completed artifacts, verify it, and only then create
-   `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`. Before the update opens, seal an
-   input manifest that hashes the initial artifacts, governing manifest, and
-   detached verification record.
-8. Receive the live update. This planned revision creates the first revised
-   set; it is not a correction of frozen revised bytes. Complete workbook
-   Section 5 and save exactly `API-A-REVISED-WORKBOOK-v1.md` and
+   `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`. Before the update opens, create
+   and verify `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`. It must hash the
+   two initial artifacts, `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt`,
+   `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`, and the exact immutable
+   `API-A-LIVE-UPDATE-v1.md`. Omission, rename, regeneration, summary, or hash
+   mismatch stops the revision phase.
+8. Only after that five-member input manifest verifies, open
+   `API-A-LIVE-UPDATE-v1.md` and record its contents exactly. This planned
+   revision creates the first revised set; it is not a correction of frozen
+   revised bytes. Complete workbook Section 5 and save exactly
+   `API-A-REVISED-WORKBOOK-v1.md` and
    `API-A-REVISED-CAPABILITY-BRIEF-v1.md`.
 9. Finish both revised artifacts. Give each an artifact ID, version, completion
    timestamp/timezone, and pre-hash state `REVISED COMPLETE`. Remove every

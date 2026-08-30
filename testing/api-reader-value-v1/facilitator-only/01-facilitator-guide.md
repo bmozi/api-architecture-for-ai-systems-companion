@@ -1,11 +1,12 @@
 # Facilitator Guide
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Facilitator-only; prepared and unrun
 
-**Revision note:** Version 1.2.3 adds machine-enforced replay identity,
-verification-command evidence, record-completion chronology, and external
-access logging; it has no human or practitioner validation.
+**Revision note:** Version 1.2.4 exports and binds the exact immutable Stage A
+live-update input. It preserves version 1.2.3's replay identity, verification
+chronology, and external access logging and has no human or practitioner
+validation.
 
 ## Purpose
 
@@ -104,9 +105,15 @@ answer. Record every intervention.
    timestamp/timezone, and `INITIAL COMPLETE` state. Hash only those completed
    artifacts in `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt`, verify it, and
    then create `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`. Before the update,
-   verify a revision-phase input manifest that hashes the artifacts, governing
-   manifest, and detached record.
-5. Read the live update:
+   create and verify `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt`. It must
+   hash both initial artifacts, their governing manifest, detached record, and
+   exact immutable `API-A-LIVE-UPDATE-v1.md`. Omission, rename, regeneration,
+   summary, or mismatch is a stop and deviation.
+5. Only after that five-member manifest verifies, deliver and open the sealed
+   participant input `API-A-LIVE-UPDATE-v1.md`. Do not retype, summarize, or
+   substitute the update. Its canonical contents are:
+
+<!-- API-A-LIVE-UPDATE-v1 CANONICAL START -->
 
 > Stonebridge's first billing request timed out after the provider committed a
 > charge. The agent retried with a new tool-call and request identifier. A
@@ -115,6 +122,8 @@ answer. Record every intervention.
 > the generator from tomorrow's pickup list and the customer was told the
 > extension succeeded. Warehouse review has not occurred, and Stonebridge
 > cannot yet tell whether either charge can be reversed.
+
+<!-- API-A-LIVE-UPDATE-v1 CANONICAL END -->
 
 6. Ask only: “What can each party safely say or do now, and what changes in
    your artifact?”

@@ -1,12 +1,12 @@
 # One-Screen Stage A Handoff
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank; open only after the revised-detail governing manifest has
 verified, its detached verification record exists, and the handoff-phase input
 manifest verifies
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
-unrun with people.
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+input and preserves version 1.2.3's replay, chronology, and access-log
+controls. It remains unrun with people.
 
 Keep this handoff to one page. Link detail instead of repeating it. Use
 `UNKNOWN` rather than guessing. An owner may be `UNASSIGNED`; do not invent an

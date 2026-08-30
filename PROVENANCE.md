@@ -120,3 +120,23 @@ and which validation or usability state actually changed.
   including omissions that refresh surrounding hashes
 - **Execution state:** `PREPARED/UNRUN`; static and synthetic defect-finding is
   not human usability, API correctness, safety, or business-value evidence
+
+## 2026-08-29 immutable live-update binding v1.2.4
+
+- **Authority:** Repair of a release blocker found by static and synthetic
+  preflight of the prepared reader-value packet
+- **Defect retained:** version 1.2.3 kept the canonical Stage A live update in
+  facilitator prose but did not export a route-declared immutable participant
+  file or bind that file into the revision-phase input manifest
+- **Added:** exact `API-A-LIVE-UPDATE-v1.md`, copied from the retained canonical
+  facilitator wording without invented scenario results
+- **Changed:** the route, packet README, revision templates/inventories, and
+  schema-v3 temporal protocol now require
+  `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` to bind both initial
+  artifacts, their governing manifest, detached record, and the exact live
+  update before it opens
+- **Enforcement:** repository validation and disposable-copy mutations reject
+  live-update omission, rename, unbound release membership, and wording drift
+  even when surrounding hashes are refreshed
+- **Execution state:** `PREPARED/UNRUN`; no human participant, usability,
+  architecture, safety, production, cost, or business-value result exists

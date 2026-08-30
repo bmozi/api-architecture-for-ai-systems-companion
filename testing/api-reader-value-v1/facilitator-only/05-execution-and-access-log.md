@@ -1,7 +1,11 @@
 # Facilitator Execution and Access Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank facilitator-side control record; prepared and unrun
+
+**Revision note:** Version 1.2.4 requires the Stage A revision-phase inventory
+to include exact immutable `API-A-LIVE-UPDATE-v1.md` and preserves version
+1.2.3's item-level continuity and verification evidence. It remains unrun.
 
 Keep this log outside every sealed participant input. It is not a participant
 instruction, artifact, answer key, or substitute for consent. Do not copy an
@@ -34,6 +38,12 @@ Record one row for every expected file and every attempted extra surface before
 the phase opens. `Present and manifested` must be `yes` for declared files and
 `no` for undeclared files. Any undeclared orchestration or facilitator file
 stops the phase.
+
+For the Stage A revision phase, the declared inventory must include both
+initial artifacts, `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt`,
+`API-A-INITIAL-FREEZE-VERIFICATION-v1.md`, and exact
+`API-A-LIVE-UPDATE-v1.md`, all bound by the verified
+`API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` before the update opens.
 
 | Stage/phase | Exact local filename or attempted surface | Declared by route/release | Expected SHA-256 | Present and manifested | Participant-accessible | First-open event ID | Disposition/deviation |
 | --- | --- | --- | --- | --- | --- | --- | --- |

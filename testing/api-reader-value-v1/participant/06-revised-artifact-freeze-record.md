@@ -1,8 +1,13 @@
 # Revised Artifact Freeze-Verification Record
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank detached record; create only after the revised governing
 manifest has been created and verified
+
+**Revision note:** Version 1.2.4 binds the exact immutable
+`API-A-LIVE-UPDATE-v1.md` into the verified revision-phase input manifest and
+preserves version 1.2.3's replay and chronology controls. It remains unrun with
+people.
 
 This record describes an already observed verification event for the first
 revised artifact set created by the planned live update. The planned revision
@@ -10,6 +15,20 @@ is not a correction of previously frozen revised bytes.
 
 Save the completed record as exactly
 `API-A-REVISED-FREEZE-VERIFICATION-v1.md`.
+
+## Revision-input lineage
+
+- Revision-phase input manifest exact filename and SHA-256:
+  `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` /
+- Live-update participant input exact filename: `API-A-LIVE-UPDATE-v1.md`
+- Live-update SHA-256 from the verified revision-phase input manifest:
+- Revision-phase input manifest includes both initial artifacts, their
+  governing manifest, detached record, and the exact live-update input: yes /
+  no
+- Live-update filename and bytes matched that manifest before opening: yes /
+  no
+- Any omission, rename, regenerated copy, summary, substitution, or mismatch:
+  none / stop and deviation
 
 ## Temporal-order evidence
 

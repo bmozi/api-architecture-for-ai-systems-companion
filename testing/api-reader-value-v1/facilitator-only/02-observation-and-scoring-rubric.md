@@ -1,10 +1,11 @@
 # Observation and Scoring Rubric
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Predetermined, blank, and unrun
 
-**Revision note:** Version 1.2.3 adds replay identity, verification-command
-evidence, completion chronology, and external access logging; it remains
+**Revision note:** Version 1.2.4 binds the exact immutable Stage A live-update
+input into the revision-phase manifest. It preserves version 1.2.3's replay
+identity, verification chronology, and external access logging and remains
 unrun with people.
 
 Score retained behavior, not agreement with preferred vocabulary.
@@ -44,6 +45,7 @@ Mark `clear`, `unclear`, `unsafe`, or `contaminated`:
 | Event truth | `confirmed` is not emitted before confirmation authority and evidence | | |
 | Durable ownership | An authorized owner is named, or `UNASSIGNED` is explicit with the authority/trigger needed to assign review, ambiguity, correction, and customer communication | | |
 | Outcome evidence | Tool call, charge, warehouse decision, event, notification, and final rental state can be reconciled | | |
+| Revision-input integrity | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` hashes both initial artifacts, their governing manifest, detached record, and exact immutable `API-A-LIVE-UPDATE-v1.md`; the file opens only after verification, with no omission, rename, regeneration, summary, substitution, or mismatch | | |
 | Revised-detail freeze integrity | Each revised detail reaches pre-hash `REVISED COMPLETE` with ID/version and completion timestamp/timezone; the governing manifest then hashes only those bytes; verification occurs next; and only afterward does the detached record describe the observed timestamp/timezone, artifact identities/hashes, and manifest filename/hash. The manifest hashes neither itself nor the later record, and the record claims no self-hash | | |
 | Handoff freeze integrity | The handoff reaches `HANDOFF COMPLETE` before its manifest is created; verification precedes its detached record; the Stage B phase-1 input manifest hashes the handoff, governing manifest, and detached record | | |
 | Stage B exact transfer | Stage B receives the detached revised verification record, governing manifest, and every handoff-linked revised detail under the same literal filename with matching ID/version, completion metadata, pre-hash state, and hash; no rename, regeneration, summary, substitution, or omission occurs | | |

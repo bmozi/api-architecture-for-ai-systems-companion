@@ -1,11 +1,12 @@
 # Results and Deviation Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.3
+**Packet:** API-RV-PILOT-001 version 1.2.4
 **Status:** Blank controlled record; no result exists
 
-**Revision note:** Version 1.2.3 adds machine-enforced replay identity,
-verification-command evidence, record-completion chronology, and external
-access logging; it has no human or practitioner validation.
+**Revision note:** Version 1.2.4 exports and binds the exact immutable Stage A
+live-update input. It preserves version 1.2.3's replay identity, verification
+chronology, and external access logging and has no human or practitioner
+validation.
 
 ## Run identity
 
@@ -40,8 +41,15 @@ access logging; it has no human or practitioner validation.
   timestamp/timezone:
 - Initial detached verification record filename:
   `API-A-INITIAL-FREEZE-VERIFICATION-v1.md`
-- Revision-phase input manifest hashes initial artifacts, governing manifest,
-  and detached record: yes / no / deviation
+- Revision-phase input manifest exact filename/hash:
+  `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` /
+- Immutable live-update participant input exact filename/hash:
+  `API-A-LIVE-UPDATE-v1.md` /
+- Revision-phase input manifest hashes both initial artifacts, governing
+  manifest, detached record, and exact live-update input: yes / no / deviation
+- Live-update filename and bytes matched before opening; no omission, rename,
+  regeneration, summary, substitution, or unbound delivery: yes / no /
+  deviation
 
 ## Revised-detail and Stage B transfer verification
 
@@ -75,7 +83,7 @@ stops detailed read-back.
 
 | Freeze | Governed artifact exact filename and pre-hash state | Governing manifest filename/hash | Observed manifest-verification timestamp/timezone | Later detached verification-record filename | Next-phase input manifest filename/hash | Preserved location |
 | --- | --- | --- | --- | --- | --- | --- |
-| Stage A initial | `API-A-INITIAL-WORKBOOK-v1.md`; `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`; `INITIAL COMPLETE` | `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` / | | `API-A-INITIAL-FREEZE-VERIFICATION-v1.md` | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` / | |
+| Stage A initial | `API-A-INITIAL-WORKBOOK-v1.md`; `API-A-INITIAL-CAPABILITY-BRIEF-v1.md`; `INITIAL COMPLETE` | `API-A-INITIAL-ARTIFACTS-SHA256SUMS-v1.txt` / | | `API-A-INITIAL-FREEZE-VERIFICATION-v1.md` | `API-A-REVISION-PHASE-INPUT-SHA256SUMS-v1.txt` /; includes `API-A-LIVE-UPDATE-v1.md` | |
 | Stage A revised | `API-A-REVISED-WORKBOOK-v1.md`; `API-A-REVISED-CAPABILITY-BRIEF-v1.md`; `REVISED COMPLETE` | `API-A-REVISED-ARTIFACTS-SHA256SUMS-v1.txt` / | | `API-A-REVISED-FREEZE-VERIFICATION-v1.md` | `API-A-HANDOFF-PHASE-INPUT-SHA256SUMS-v1.txt` / | |
 | Stage A handoff | `API-A-ONE-SCREEN-HANDOFF-v1.md`; `HANDOFF COMPLETE` | `API-A-HANDOFF-SHA256SUMS-v1.txt` / | | `API-A-HANDOFF-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-1-INPUT-SHA256SUMS-v1.txt` / | |
 | Stage B Section 1 | `API-B-SECTION-1-SCAN-v1.md`; `SECTION COMPLETE` | `API-B-SECTION-1-SHA256SUMS-v1.txt` / | | `API-B-SECTION-1-FREEZE-VERIFICATION-v1.md` | `API-B-PHASE-2-INPUT-SHA256SUMS-v1.txt` / | |

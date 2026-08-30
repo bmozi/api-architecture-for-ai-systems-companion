@@ -1,6 +1,6 @@
 # Participant Consent and Privacy Notice
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank; no consent has been obtained
 **Branch:** Human only; mutually exclusive with the synthetic-context record
 **Run artifact identity:** `API-HUMAN-CONSENT` / `v1`

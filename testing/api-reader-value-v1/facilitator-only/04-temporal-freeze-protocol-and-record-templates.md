@@ -1,6 +1,6 @@
 # Temporal Freeze Protocol and Record Templates
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Facilitator-only static validation note and blank run-record schema;
 prepared and unrun
 
@@ -87,7 +87,7 @@ The live-update bytes are canonical participant input, not facilitator speech
 to reconstruct later. The planned revision remains distinct from a correction
 of already frozen revised bytes.
 
-This exact five-member manifest remains immutable in version 1.2.5. None of
+This exact five-member manifest remains immutable in version 1.2.6. None of
 the entry, debrief, results, closeout, or layout records may be inserted into,
 renamed within, or substituted for one of its five members.
 

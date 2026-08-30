@@ -1,6 +1,6 @@
 # Stage A Material Feedback Template
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank post-handoff participant input; prepared and unrun
 **Output identity:** `API-A-MATERIAL-FEEDBACK` / `v1`
 **Exact output filename:** `API-A-MATERIAL-FEEDBACK-v1.md`

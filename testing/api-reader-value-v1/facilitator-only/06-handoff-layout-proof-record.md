@@ -1,6 +1,6 @@
 # One-Page Handoff Layout Proof Record Template
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Facilitator-only blank proof; prepared and unrun
 **Exact run filename:** `API-A-HANDOFF-LAYOUT-PROOF-<ATTEMPT-ID>-v1.md`
 

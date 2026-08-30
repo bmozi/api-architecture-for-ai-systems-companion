@@ -22,7 +22,7 @@ PACKET_HEADER_PATTERN = re.compile(
     r"^\*\*Packet:\*\*\s*(\S+)\s+version\s+(\S+)\s*$", re.MULTILINE
 )
 TEMPORAL_SCHEMA_VERSION = 3
-PACKET_VERSION = "1.2.5"
+PACKET_VERSION = "1.2.6"
 LIVE_UPDATE_FILENAME = "API-A-LIVE-UPDATE-v1.md"
 LIVE_UPDATE_PATH = f"participant/{LIVE_UPDATE_FILENAME}"
 REVISION_PHASE_ID = "stage_a_revision"
@@ -177,8 +177,8 @@ ENTRY_BRANCH_PROTOCOL = {
     },
 }
 FULL_ROUTE_BOUNDARY_EVENTS = [
-    "RUN_STARTED",
     "ENTRY_BRANCH_SELECTED",
+    "RUN_STARTED",
     "STAGE_A_CONTEXT_MANIFEST_VERIFIED",
     "STAGE_A_STARTED",
     "STAGE_A_FEEDBACK_COMPLETED",
@@ -697,6 +697,7 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "`API-A-LIVE-UPDATE-v1.md`",
                 "five-member manifest",
                 "Choose exactly one entry branch",
+                "record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`",
                 "six scored freeze chains",
                 "full-route closure",
                 "`API-RUN-RESULTS-<ATTEMPT-ID>-v1.md`",
@@ -709,6 +710,7 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
                 "`ORCHESTRATION.md`",
                 "`API-A-LIVE-UPDATE-v1.md`",
                 "Omission, rename, regeneration, summary, or hash mismatch",
+                "record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`",
                 "`RUN_STARTED`",
                 "`ENTRY_BRANCH_SELECTED`",
                 "`STAGE_A_STARTED`",
@@ -773,6 +775,7 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
             ],
             "facilitator-only/01-facilitator-guide.md": [
                 "execution and access log",
+                "record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`",
                 "every manifest gate, file open or attempted access, artifact completion",
                 "exact verification command, complete observed output, exit code",
                 "explicit later record-completion timestamp and timezone",
@@ -816,6 +819,8 @@ def validate_temporal_protocols(manifest: dict, errors: list[str]) -> int:
             ],
             "facilitator-only/05-execution-and-access-log.md": [
                 "Keep this log outside every sealed participant input",
+                "1. `ENTRY_BRANCH_SELECTED`",
+                "2. `RUN_STARTED`",
                 "SEALED_INPUT_MANIFEST_CREATED",
                 "GOVERNING_MANIFEST_VERIFIED",
                 "DETACHED_RECORD_COMPLETED",

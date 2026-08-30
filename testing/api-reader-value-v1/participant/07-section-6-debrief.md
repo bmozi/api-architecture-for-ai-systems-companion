@@ -1,6 +1,6 @@
 # Stage B Section 6 Debrief Template
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank post-scoring participant input; prepared and unrun
 **Output identity:** `API-B-SECTION-6-DEBRIEF` / `v1`
 **Exact output filename:** `API-B-SECTION-6-DEBRIEF-v1.md`

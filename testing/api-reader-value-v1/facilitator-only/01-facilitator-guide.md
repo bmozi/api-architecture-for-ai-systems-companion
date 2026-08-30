@@ -1,6 +1,6 @@
 # Facilitator Guide
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Facilitator-only; prepared and unrun
 
 **Revision note:** Version 1.2.5 adds full-route closure while preserving version 1.2.4's exact immutable Stage A
@@ -36,9 +36,10 @@ Time is evidence, not a speed target.
 
 ## Required capture
 
-First create the run-specific execution/access log and record `RUN_STARTED`.
-Choose exactly one entry branch and record `ENTRY_BRANCH_SELECTED`. For a
-human, record setup start before the notice opens and complete separate Stage A
+Choose exactly one entry branch before the run begins. Then create the run-
+specific execution/access log and record `ENTRY_BRANCH_SELECTED` before
+`RUN_STARTED`. For a human, record setup start before the notice opens and
+complete separate Stage A
 and Stage B consent records. For a synthetic rehearsal, complete
 `API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`; do not complete a human consent
 form. Record the exact stage start immediately before the route opens, plus the

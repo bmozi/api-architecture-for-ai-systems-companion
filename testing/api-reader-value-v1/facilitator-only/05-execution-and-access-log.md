@@ -1,6 +1,6 @@
 # Facilitator Execution and Access Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank facilitator-side control record; prepared and unrun
 
 **Revision note:** Version 1.2.5 adds full-route boundaries while preserving
@@ -37,8 +37,8 @@ or changed byte is a deviation, not a detail to reconstruct later.
 
 Record these non-substitutable boundaries around the six scored freeze chains:
 
-1. `RUN_STARTED`
-2. `ENTRY_BRANCH_SELECTED`
+1. `ENTRY_BRANCH_SELECTED`
+2. `RUN_STARTED`
 3. `STAGE_A_CONTEXT_MANIFEST_VERIFIED`
 4. `STAGE_A_STARTED`
 5. Stage A initial, revised, and handoff freeze chains

@@ -1,6 +1,6 @@
 # Stonebridge Scenario: Extend One Rental Safely
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Fictional, prepared, and unrun
 
 **Revision note:** Version 1.2.5 preserves version 1.2.4's exact immutable Stage A live-update

@@ -1,6 +1,6 @@
 # Results and Deviation Log
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank controlled record; no result exists
 **Run artifact identity:** `API-RUN-RESULTS` / `v1`
 **Exact run filename:** `API-RUN-RESULTS-<ATTEMPT-ID>-v1.md`

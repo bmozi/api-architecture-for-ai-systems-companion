@@ -1,6 +1,6 @@
 # Stage A Practitioner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank participant record
 
 **Revision note:** Version 1.2.5 adds explicit Stage A boundaries while

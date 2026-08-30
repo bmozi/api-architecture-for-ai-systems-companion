@@ -1,6 +1,6 @@
 # Synthetic Context Record Template
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank source template; not a completed run record
 **Artifact identity:** `API-SYNTHETIC-CONTEXT` / `v1`
 **Exact run filename:** `API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`
@@ -12,7 +12,7 @@ consent. Do not complete, copy, or deliver
 
 ## Required immutable run context
 
-- Packet ID/version: `API-RV-PILOT-001` / `1.2.5`
+- Packet ID/version: `API-RV-PILOT-001` / `1.2.6`
 - Attempt ID:
 - Required state literal: `SYNTHETIC — NO HUMAN PARTICIPANT OR HUMAN DATA`
 - Scenario boundary: `FICTIONAL SCENARIO ONLY`

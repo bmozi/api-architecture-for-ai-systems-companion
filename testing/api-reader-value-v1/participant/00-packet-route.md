@@ -1,6 +1,6 @@
 # Exact Participant Route
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Human execution:** `PREPARED/UNRUN`
 **Revision note:** Version 1.2.5 adds mutually exclusive entry and complete
 route-closure gates while preserving version 1.2.4's exact immutable Stage A
@@ -17,10 +17,10 @@ opening it.
 
 ## Before either stage
 
-The facilitator first creates the run-specific execution/access log and records
-`RUN_STARTED`. Choose exactly one entry branch for the entire attempt and
-record `ENTRY_BRANCH_SELECTED`. The branches are mutually exclusive and may
-not change or mix between stages:
+Choose exactly one entry branch for the entire attempt before the run begins.
+The facilitator then creates the run-specific execution/access log and must
+record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`. The branches are mutually
+exclusive and may not change or mix between stages:
 
 - **Human branch:** complete every required field in
   `01-consent-and-privacy.md`. Use separate run-specific consent records for

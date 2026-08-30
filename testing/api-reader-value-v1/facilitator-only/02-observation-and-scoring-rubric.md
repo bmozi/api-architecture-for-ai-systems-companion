@@ -1,6 +1,6 @@
 # Observation and Scoring Rubric
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Predetermined, blank, and unrun
 
 **Revision note:** Version 1.2.5 adds full-route and layout evidence gates while preserving version 1.2.4's exact immutable Stage A live-update

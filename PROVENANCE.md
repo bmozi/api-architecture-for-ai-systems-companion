@@ -159,3 +159,19 @@ and which validation or usability state actually changed.
 - **Execution state:** human evidence remains `PREPARED/UNRUN`; real-world
   evidence remains `UNRUN`. Static and synthetic checks establish no
   comprehension, API correctness, safety, production, cost, or business value
+
+## 2026-08-30 entry-before-run chronology repair v1.2.6
+
+- **Authority:** Independent cross-packet reader-route chronology audit
+- **Preserved:** version 1.2.5's exclusive entry branches, full-route closure,
+  one-page proof contract, six freeze chains, schema-3 exact five-member Stage
+  A revision binding, 21 legacy adversarial cases, and immutable
+  `API-A-LIVE-UPDATE-v1.md` bytes
+- **Repair:** machine and reader/facilitator routes now require
+  `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`; the prior version is retained
+  rather than amended
+- **Enforcement:** a new checksum-refreshed reader-route mutation reverses the
+  two events and must be rejected even after ordinary hashes are refreshed
+- **Execution state:** human evidence remains `PREPARED/UNRUN`; real-world
+  evidence remains `UNRUN`. Static checks establish no comprehension, API
+  correctness, safety, production, cost, or business value

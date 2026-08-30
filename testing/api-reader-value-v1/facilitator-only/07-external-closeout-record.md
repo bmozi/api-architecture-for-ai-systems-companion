@@ -1,6 +1,6 @@
 # External Run Closeout Record Template
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Facilitator-only blank post-log record; prepared and unrun
 **Artifact identity:** `API-RUN-CLOSEOUT` / `v1`
 **Exact run filename:** `API-RUN-CLOSEOUT-<ATTEMPT-ID>-v1.md`

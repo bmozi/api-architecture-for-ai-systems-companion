@@ -1,6 +1,6 @@
 # Stage B Decision-Owner Workbook
 
-**Packet:** API-RV-PILOT-001 version 1.2.5
+**Packet:** API-RV-PILOT-001 version 1.2.6
 **Status:** Blank independent read-back record
 
 **Revision note:** Version 1.2.5 adds explicit scoring, debrief, and Stage B boundaries while preserving version 1.2.4's exact immutable Stage A live-update

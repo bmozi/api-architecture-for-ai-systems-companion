@@ -318,6 +318,18 @@ def mutate_entry_branch_mixing(repo: Path) -> None:
     write_protocol(repo, protocol)
 
 
+def mutate_reader_route_run_before_branch(repo: Path) -> None:
+    update_critical_document(
+        repo,
+        "participant/00-packet-route.md",
+        lambda content: content.replace(
+            "record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`",
+            "record `RUN_STARTED` before `ENTRY_BRANCH_SELECTED`",
+            1,
+        ),
+    )
+
+
 def mutate_synthetic_human_claim(repo: Path) -> None:
     update_critical_document(
         repo,
@@ -517,6 +529,11 @@ def main() -> int:
             "entry-branch-mixing",
             mutate_entry_branch_mixing,
             "entry branches are incomplete, mixed, or stale",
+        ),
+        (
+            "reader-route-run-before-entry-branch",
+            mutate_reader_route_run_before_branch,
+            "missing replay-control clause: record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`",
         ),
         (
             "synthetic-human-claim",

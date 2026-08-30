@@ -1,19 +1,19 @@
 # API Reader-Value Pilot Packet
 
 **Packet ID:** API-RV-PILOT-001
-**Version:** 1.2.5
+**Version:** 1.2.6
 **Status:** `PREPARED/UNRUN` for human participants; no participant recruited or
 consented
 **Scenario:** Stonebridge Equipment Rental, entirely fictional
 
-Version 1.2.5 adds explicit mutually exclusive human-consent and synthetic-
-context entry branches, both stage boundaries, scoring end, a manifested
+Version 1.2.6 corrects the entry chronology: select exactly one human or
+synthetic branch and record `ENTRY_BRANCH_SELECTED` before `RUN_STARTED`. It
+preserves version 1.2.5's stage boundaries, scoring end, manifested
 post-scoring Section 6 debrief, immutable run-specific results before log
-close, and later external closeout. These full-route boundaries remain
-separate from the six scored freeze chains. It also adds a proof-gated local
-one-page US Letter handoff contract; layout evidence is not comprehension.
-Human evidence remains `PREPARED/UNRUN` and real-world evidence remains
-`UNRUN`.
+close, later external closeout, and proof-gated one-page US Letter handoff
+contract. These full-route boundaries remain separate from the six scored
+freeze chains; layout evidence is not comprehension. Human evidence remains
+`PREPARED/UNRUN` and real-world evidence remains `UNRUN`.
 
 Version 1.2.4 exported the canonical Stage A update as the exact immutable
 participant/run input `API-A-LIVE-UPDATE-v1.md` and requires the verified
@@ -44,9 +44,10 @@ lab, value ledger, and executive decision language.
 
 ## Sealed flat run inputs
 
-Create the facilitator-side execution/access log and record `RUN_STARTED`.
-Choose exactly one entry branch and record `ENTRY_BRANCH_SELECTED`: completed
-run-specific human consent records, or one immutable run-specific
+Choose exactly one entry branch before the run begins. Create the facilitator-
+side execution/access log and record `ENTRY_BRANCH_SELECTED` before
+`RUN_STARTED`. Represent the selected branch with completed run-specific human
+consent records, or one immutable run-specific
 `API-SYNTHETIC-CONTEXT-<ATTEMPT-ID>-v1.md`. Never omit or mix branches, and
 never fabricate consent. Verify the selected record in
 `API-STAGE-A-CONTEXT-SHA256SUMS-v1.txt` before Stage A and

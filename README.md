@@ -1,4 +1,7 @@
-# Architecting APIs in the Age of AI — Companion
+# APIs in the Age of AI — Companion
+
+**Series:** *Solution Architecture in the Age of AI — Software Engineering Field Guides*
+**Previous working title:** *Architecting APIs in the Age of AI*.
 
 Turn one useful business capability into a promise that applications,
 partners, automation, MCP clients, and AI agents can reuse without inventing
@@ -22,9 +25,10 @@ for production.
   what evidence is persuasive.
 - **The companion provides the moves:** blank templates, completed examples,
   decision guides, mutation exercises, and evidence records.
-- **The book stands alone:** this repository makes practice easier; it is not a
-  substitute for the reasoning, story, tradeoffs, or evidence boundaries in
-  *Architecting APIs in the Age of AI*.
+- **The book is required for the full exercise:** read the relevant chapter
+  before using a worksheet. The book supplies the reasoning, story, tradeoffs,
+  and evidence boundaries; this repository makes that judgment practice
+  inspectable. The repository is not a substitute for the book.
 
 ## Start here
 
@@ -32,6 +36,11 @@ Use [START-HERE.md](START-HERE.md) to take one capability through a thirty-minut
 first pass. You will produce a five-sentence capability promise and decide
 whether the surrounding design also needs an MCP tool, event, workflow, or
 agent.
+
+For the intended result, keep *Architecting APIs in the Age of AI* beside this
+exercise and use [BOOK-TO-COMPANION-MAP.md](BOOK-TO-COMPANION-MAP.md) to read the
+relevant chapter first. A completed worksheet without that chapter context is
+a draft for discussion, not a complete architecture decision.
 
 ## Core assets
 

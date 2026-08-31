@@ -22,6 +22,12 @@ This brief keeps four things separate:
 4. the agent, person, or fixed application path that decides whether to invoke
    it.
 
+**Reader translation:** *Delegated authority* is the specific power a caller
+may use, who granted it, and where the system enforces the limit. Authentication
+and an API scope can show who called or what the software may technically try;
+they do not by themselves prove legitimate authority to act for a person,
+partner, or organization.
+
 The official MCP specification defines protocol mechanisms through which
 servers expose tools with descriptions and schemas for language models to
 invoke. It does not define your business meaning, organizational authority, or

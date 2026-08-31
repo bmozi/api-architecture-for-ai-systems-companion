@@ -1,5 +1,12 @@
 # Start Here: One Capability in Thirty Minutes
 
+**Reader route:** Complete the thirty-minute exercise output first. The
+facilitator-only freeze, manifest, and evidence protocol is a separate route
+for controlled pilots; do not open it until the first-pass artifact is done.
+
+**Plain language:** Delegated authority is the specific power a caller may use,
+who granted it, and where the system enforces the limit.
+
 Choose one useful action a person, partner, application, automation, or AI tool
 needs from an existing system. Do not begin with the endpoint.
 

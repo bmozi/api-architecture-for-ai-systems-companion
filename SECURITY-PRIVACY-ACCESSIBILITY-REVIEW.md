@@ -1,7 +1,7 @@
 # Security, Privacy, and Accessibility Review
 
 **Review date:** 2026-08-30
-**Repository:** Architecting APIs in the Age of AI Companion
+**Repository:** API Architecture for AI Systems Companion
 **Evidence state:** `STATIC-SCREEN-COMPLETE / OWNER-APPROVED-FOR-STATIC-DISTRIBUTION / HUMAN-ACCESSIBILITY-VALIDATION-PENDING`
 
 ## Scope and claim boundary

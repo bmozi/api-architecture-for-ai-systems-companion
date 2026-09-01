@@ -13,6 +13,6 @@ it does not grant rights to any third-party material that may be added later.
 
 The owner confirms content ownership/provenance, intended commercial-use and
 attribution terms, security/privacy disclosure scope, packaging metadata, and
-the corresponding *Architecting APIs in the Age of AI* book edition for this
+the corresponding *API Architecture for AI Systems* book edition for this
 release. Human learner/practitioner validation and representative
 accessibility testing remain separate evidence gates.

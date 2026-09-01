@@ -1,6 +1,6 @@
-# APIs in the Age of AI — Companion
+# API Architecture for AI Systems — Companion
 
-**Series:** *Solution Architecture in the Age of AI — Software Engineering Field Guides*
+**Series:** *AI Systems Architecture Field Guides*
 **Previous working title:** *Architecting APIs in the Age of AI*.
 
 Turn one useful business capability into a promise that applications,
@@ -37,7 +37,7 @@ first pass. You will produce a five-sentence capability promise and decide
 whether the surrounding design also needs an MCP tool, event, workflow, or
 agent.
 
-For the intended result, keep *Architecting APIs in the Age of AI* beside this
+For the intended result, keep *API Architecture for AI Systems* beside this
 exercise and use [BOOK-TO-COMPANION-MAP.md](BOOK-TO-COMPANION-MAP.md) to read the
 relevant chapter first. A completed worksheet without that chapter context is
 a draft for discussion, not a complete architecture decision.

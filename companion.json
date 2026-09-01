@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "APIs in the Age of AI Companion",
+  "title": "API Architecture for AI Systems Companion",
   "book_repository": "https://github.com/bmozi/architecting-apis-in-the-age-of-ai",
   "source_commit": "48a1d47",
   "required_files": [

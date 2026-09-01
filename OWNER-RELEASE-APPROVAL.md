@@ -1,12 +1,12 @@
 # Owner Release Approval
 
-**Repository:** Architecting APIs in the Age of AI Companion
+**Repository:** API Architecture for AI Systems Companion
 **Approval date:** 2026-08-30
 **Approver:** John Briggs, owner and developer
 **Decision:** `OWNER-APPROVED-FOR-INTENDED-DISTRIBUTION`
 
 I approve the current static repository materials for intended distribution
-with the corresponding *Architecting APIs in the Age of AI* book. The scope
+with the corresponding *API Architecture for AI Systems* book. The scope
 includes the documentation, constructed examples, exercises, validation
 scripts, generated release artifacts, and release metadata present in the
 approved package.

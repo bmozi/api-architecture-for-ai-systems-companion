@@ -73,6 +73,15 @@ selection precede run start in both machine and reader-facing routes. The exact
 five-member Stage A revision binding remains unchanged. Real-world evidence
 remains unrun.
 
+## Imagine and shape what comes next
+
+Use the [Responsible Amplification and Possible Futures
+Card](examples/responsible-amplification-and-possible-futures-card.md) to begin
+with a beneficial possibility, trace bias and consequences through the whole
+system, compare three plausible futures, and turn one future signal into a
+reversible present decision. It is `PLANNED/UNRUN` and does not prove a
+forecast, fairness, safety, legality, effectiveness, or reader learning.
+
 ## Development boundary
 
 This is a private development companion. The templates and constructed examples

@@ -53,6 +53,7 @@ a draft for discussion, not a complete architecture decision.
 | Make failure usable to consumers | [Error-to-Recovery Map](error-to-recovery-map.md) |
 | Test duplicates and unknown outcomes | [Idempotency and Outcome Test Matrix](idempotency-and-outcome-test-matrix.md) |
 | Prove compatibility and outcomes | [Compatibility Evidence Matrix](compatibility-evidence-matrix.md) and [Outcome Evidence Map](outcome-evidence-map.md) |
+| Separate fast lookup from a valid transaction | [Northbridge Data-Structures Architecture Bridge](examples/northbridge-data-structures-architecture-bridge.md) |
 
 Use [INDEX.md](INDEX.md) for role- and outcome-based routes and
 [BOOK-TO-COMPANION-MAP.md](BOOK-TO-COMPANION-MAP.md) to reconnect each tool to

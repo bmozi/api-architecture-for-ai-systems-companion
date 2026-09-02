@@ -175,3 +175,12 @@ and which validation or usability state actually changed.
 - **Execution state:** human evidence remains `PREPARED/UNRUN`; real-world
   evidence remains `UNRUN`. Static checks establish no comprehension, API
   correctness, safety, production, cost, or business value
+
+## 2026-09-01 Northbridge data-structures teaching bridge
+
+- **Authority:** John Briggs's Corollary Warehousing assessment and direct
+  author instruction to deepen the five-book teaching connection
+- **Use:** Constructed API lesson and transfer card separating fast lookup from
+  authorization, concurrency, idempotency, and durable transaction outcomes
+- **Boundary:** `PLANNED/UNRUN`; no API correctness, capacity, usability,
+  production, or business-result claim is established

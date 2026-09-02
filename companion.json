@@ -1,10 +1,14 @@
 {
   "schema_version": 1,
   "title": "API Architecture for AI Systems Companion",
-  "book_repository": "https://github.com/bmozi/architecting-apis-in-the-age-of-ai",
+  "book_title": "API Architecture for AI Systems",
+  "repository": "https://github.com/bmozi/api-architecture-for-ai-systems-companion",
   "source_commit": "48a1d47",
   "required_files": [
     "README.md",
+    "LICENSE",
+    "LICENSE-CONTENT",
+    "LICENSE-CODE",
     "START-HERE.md",
     "INDEX.md",
     "BOOK-TO-COMPANION-MAP.md",

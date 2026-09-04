@@ -5,8 +5,9 @@ under which authority and time boundary.
 
 ## Status and evidence boundary
 
-**Status:** Working companion asset; independent use and executable mutation
-testing remain open.
+**Use boundary:** Illustrative field tool; independent use and executable
+mutation testing remain unrun. Completion is not certification or proof of
+production fitness.
 
 This map does not make policy legitimate or complete. The accountable business,
 security, contractual, legal, and operational authorities must approve the

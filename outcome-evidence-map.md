@@ -5,8 +5,9 @@ capability outcome, denial, or unresolved result.
 
 ## Status and evidence boundary
 
-**Status:** Working companion asset; reconstruction, privacy, retention, and
-failure-survival testing remain open.
+**Use boundary:** Illustrative field tool; reconstruction, privacy, retention,
+and failure-survival testing remain unrun. Completion is not certification or
+proof of production fitness.
 
 The map connects observations. It does not turn correlation into causation,
 make a nonauthoritative record true, or authorize broad telemetry access.

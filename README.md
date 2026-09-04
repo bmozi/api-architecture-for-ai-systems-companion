@@ -91,7 +91,8 @@ label when adapting the material.
 
 Written content is available under
 [CC BY 4.0](LICENSE-CONTENT), and executable code is available under the
-[Apache License 2.0](LICENSE-CODE). Source lineage is recorded in
+[Apache License 2.0](LICENSE-CODE). [TERMS.md](TERMS.md) summarizes the same
+scope and use boundary without adding restrictions. Source lineage is recorded in
 [PROVENANCE.md](PROVENANCE.md); local integrity checks are documented in
 [VALIDATION.md](VALIDATION.md). Human learner and practitioner validation
 remains a separate evidence gate.

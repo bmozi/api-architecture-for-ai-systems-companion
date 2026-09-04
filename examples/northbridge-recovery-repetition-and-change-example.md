@@ -3,8 +3,8 @@
 ## Disclosure and evidence boundary
 
 Northbridge Exchange, its partner, its systems, and every incident below are
-fictional composite teaching material. The example applies the working tools
-from Chapters 7, 8, and 10. It is not a production result, a John Briggs career
+fictional composite teaching material. The example applies the illustrative
+field tools from Chapters 7, 8, and 10. It is not a production result, a John Briggs career
 case, a measured reliability claim, or evidence that the tools work for
 independent practitioners.
 
@@ -225,5 +225,5 @@ It does not establish:
 - that using the tools improves delivery speed, reliability, safety, or
   business outcomes.
 
-Those gates require independent use, executable evidence, author review, and
-real operational context.
+Those claims require independent use, executable evidence, qualified expert
+review, and real operational context.

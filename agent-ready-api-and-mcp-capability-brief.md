@@ -3,9 +3,9 @@
 Use this brief when an existing or proposed API capability will be exposed to
 an AI application, including through a Model Context Protocol (MCP) server.
 
-**Status:** Working companion asset; independent practitioner usability remains
-untested. Completing the template is not release, safety, or business-value
-evidence.
+**Use boundary:** Illustrative field tool; independent-practitioner usability
+remains untested. Completing the template is not release, safety,
+business-value, or production-fitness evidence.
 
 ## What this brief is for
 

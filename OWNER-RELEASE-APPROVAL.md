@@ -28,7 +28,7 @@ representative assistive-technology testing, or human learner/practitioner
 validation. Those claims require their own evidence and must retain their
 truthful status labels.
 
-+## Public-release licensing update
+## Public-release licensing update
 
 **Recorded:** 2026-09-02
 **Decision:** `APPROVED FOR PUBLIC DISTRIBUTION`

@@ -1,23 +1,26 @@
-# Working Companion Terms
+# Companion Terms and Use Boundary
 
-**Status:** Internal development restriction; not a final reader license and
-not approved for external distribution
+**Distribution status:** Owner-approved for public distribution.
 
-Copyright © 2026 John Briggs. All rights reserved.
+Copyright © 2026 John Briggs.
 
-The companion templates, worksheets, examples, and related files in this
-working repository are unpublished development materials. They may be copied
-or adapted only for authorized internal authoring, editorial review, technical
-review, and practitioner-test preparation within this project. They may not be
-published, sold, sublicensed, redistributed, or represented as a production-
-ready method or certified control.
+This repository uses the dual-license model defined in [LICENSE](LICENSE):
 
-These working terms do not establish that a companion asset is correct,
-complete, safe, usable, legally sufficient, or fit for a particular purpose.
-Constructed or scenario examples remain teaching fixtures, not empirical
-evidence or John Briggs history.
+- written and creative content is licensed under Creative Commons Attribution
+  4.0 International as described in [LICENSE-CONTENT](LICENSE-CONTENT); and
+- executable code and machine-executable configuration expressly within that
+  scope is licensed under Apache License 2.0 as described in
+  [LICENSE-CODE](LICENSE-CODE).
 
-A final reader or enterprise-use license requires explicit John Briggs
-approval and qualified legal review before any external companion distribution.
-If final approved terms differ, the later approved terms supersede this
-internal restriction for the materials and versions they identify.
+Those license files control their respective scopes. This summary adds no
+restriction to the permissions they grant. Material that explicitly states a
+different license remains governed by that statement. The licenses cover this
+companion repository; they do not license the separately copyrighted book or
+its source repository.
+
+The tools, worksheets, and examples are educational and provided without
+warranties. Copyright permission does not certify that an asset is correct,
+complete, secure, accessible, legally sufficient, effective, or fit for
+production. Constructed and scenario examples remain teaching material, not
+empirical evidence or John Briggs career history. Preserve evidence-state and
+attribution notices when adapting the materials.

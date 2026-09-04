@@ -6,7 +6,7 @@
 drift is not
 
 The embedded companion gives the manuscript an edition-bound teaching
-snapshot. This standalone repository adds reader navigation, working terms,
+snapshot. This standalone repository adds reader navigation, public licensing terms,
 validation, facilitator separation, and versioned pilot materials. Those jobs
 require some different files and links.
 
@@ -34,4 +34,5 @@ The collection validator in the private portfolio repository checks that no
 book-source file is missing from the standalone copy, normalized common files
 match unless explicitly classified, and standalone-only paths fit declared
 distribution categories. Repository validation and source alignment do not
-prove usability, correctness, safety, or publication readiness.
+prove usability, correctness, safety, production fitness, or retailer
+acceptance.

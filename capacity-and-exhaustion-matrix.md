@@ -3,8 +3,9 @@
 Use this to define consumer-visible behavior when demand, cost, present
 capacity, entitlement, or abuse policy constrains a capability.
 
-**Status:** Working companion asset; Northbridge and independent practitioner
-validation remain open.
+**Use boundary:** Illustrative field tool; Northbridge and independent-
+practitioner validation remain unrun. Completion is not certification or proof
+of production fitness.
 
 ## 1. Protected boundary
 

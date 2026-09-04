@@ -4,8 +4,8 @@
 
 Northbridge Exchange, its partner, its buyers, and every system and decision
 below are fictional composite teaching material. This example applies three
-working companion tools to the frozen inventory-reservation scenario. It is not
-a production result, a John Briggs career case, a security assessment, or
+illustrative field tools to the frozen inventory-reservation scenario. It is
+not a production result, a John Briggs career case, a security assessment, or
 evidence that the tools improve an outcome.
 
 **Assets applied:**

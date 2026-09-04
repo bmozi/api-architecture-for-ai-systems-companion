@@ -8,7 +8,11 @@
   repository-governance additions
 - **Content status:** blank tools, transparently constructed examples, and
   unrun practitioner-test materials retain their source labels
-- **Distribution status:** private development; no public release authorized
+- **Initial distribution status:** private development; no public release was
+  authorized at the time of the seed export
+- **Current distribution status:** owner-approved for public distribution
+  under the dual-license scope recorded in `LICENSE`, `LICENSE-CONTENT`, and
+  `LICENSE-CODE`
 
 Future changes must record the source-book commit or independent authority used,
 whether an example is genuine, anonymized, constructed, scenario, or observed,
@@ -194,6 +198,18 @@ and which validation or usability state actually changed.
   human possibility, lifecycle bias, alternative futures, infrastructure and
   economic consequences, evolving work, institutional authority, and one
   reversible current decision
-- **Boundary:** AI-assisted working learning material; `PLANNED/UNRUN`. A
+- **Boundary:** AI-assisted illustrative learning material; `PLANNED/UNRUN`. A
   completed card is a scenario and decision record, not prediction, fairness,
   safety, legal, environmental, economic, usability, or effectiveness evidence.
+
+## 2026-09-03 reader-facing status and license alignment
+
+- **Authority:** Direct John Briggs instruction to finalize the five-book
+  series and its reader-facing companions for publication.
+- **Changed:** Replaced development-state labels on public tools and examples
+  with durable use boundaries while preserving each specific `unrun`,
+  `untested`, constructed, and nonclaim state; aligned `TERMS.md` with the
+  existing CC BY 4.0 content and Apache 2.0 code licenses.
+- **Boundary:** Editorial and licensing consistency does not establish human
+  usability, implementation correctness, security, legal sufficiency,
+  production fitness, retailer acceptance, or physical-proof quality.

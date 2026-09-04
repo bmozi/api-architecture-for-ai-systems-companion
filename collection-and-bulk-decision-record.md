@@ -4,8 +4,9 @@ Use this before choosing pagination mechanics, flexible query grammar, or a
 bulk envelope. A valid page or array is not evidence of complete traversal,
 affordable execution, one transaction, or safe item recovery.
 
-**Status:** Working companion asset; Northbridge and independent practitioner
-validation remain open.
+**Use boundary:** Illustrative field tool; Northbridge and independent-
+practitioner validation remain unrun. Completion is not certification or proof
+of production fitness.
 
 ## 1. Collection contract
 

@@ -5,8 +5,9 @@ across repeated, concurrent, stale, timed-out, and replayed intent.
 
 ## Status and purpose
 
-**Status:** Working companion asset; independent practitioner and executable
-testing remain open.
+**Use boundary:** Illustrative field tool; independent-practitioner and
+executable testing remain unrun. Completion is not certification or proof of
+production fitness.
 
 This matrix deliberately counts business outcomes rather than assuming one
 handler invocation, one message delivery, or one transport response proves

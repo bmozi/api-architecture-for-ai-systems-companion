@@ -5,8 +5,9 @@ is assigned to protect.
 
 ## Status and evidence boundary
 
-**Status:** Working companion asset; no mutation result exists until an
-executable test or retained observation is attached.
+**Use boundary:** Illustrative field tool; no mutation result exists until an
+executable test or retained observation is attached. Completion is not
+certification or proof of production fitness.
 
 A generated test, planned mutation, or green schema is not evidence that the
 business promise survived.

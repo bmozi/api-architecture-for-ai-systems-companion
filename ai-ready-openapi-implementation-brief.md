@@ -3,8 +3,9 @@
 This brief directs generation after the capability contract is approved. It is
 not a substitute for the Meaning-and-Authority Brief.
 
-**Status:** Working companion asset; independent practitioner usability remains
-untested.
+**Use boundary:** Illustrative field tool; independent-practitioner usability
+remains untested. Completion is not certification or proof of production
+fitness.
 
 ## Approved inputs
 

@@ -3,8 +3,9 @@
 Start with what a person or system needs to accomplish. Name the architecture
 only after the need and consequence are clear.
 
-**Status:** Working companion asset; independent practitioner usability remains
-untested.
+**Use boundary:** Illustrative field tool; independent-practitioner usability
+remains untested. Completion is not certification or proof of production
+fitness.
 
 ## A plain-language first pass
 

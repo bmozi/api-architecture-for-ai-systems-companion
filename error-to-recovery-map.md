@@ -4,7 +4,8 @@ Use this before assigning transport codes or generating an error schema.
 
 ## Status and purpose
 
-**Status:** Working companion asset; independent practitioner use remains open.
+**Use boundary:** Illustrative field tool; independent-practitioner use remains
+unrun. Completion is not certification or proof of production fitness.
 
 The map tests whether every published failure gives the consumer a safe,
 bounded next action without exposing protected information or unstable

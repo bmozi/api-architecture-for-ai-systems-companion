@@ -3,8 +3,8 @@
 ## Disclosure and evidence boundary
 
 Northbridge Exchange, every system, policy, workload, and outcome below are
-fictional composite teaching material. This example applies two working
-companion tools to a frozen design scenario. It is not a John Briggs career
+fictional composite teaching material. This example applies two illustrative
+field tools to a frozen design scenario. It is not a John Briggs career
 case, production design, load result, security assessment, or evidence that the
 tools improve an outcome.
 

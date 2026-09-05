@@ -1,5 +1,9 @@
 # Source Alignment and Permitted Drift
 
+**Current aligned book source:** `685fe68d959a4e539e476b4291899540ade6afa6` (September 5, 2026).
+The local improvement snapshot is now committed. Earlier provenance entries
+retain their original dates and evidence states; practitioner testing remains open.
+
 **Book source:** `bmozi/architecting-apis-in-the-age-of-ai`, `companion/`
 **Original standalone seed:** book commit `48a1d47`
 **Current rule:** explicit operational drift is permitted; silent conceptual

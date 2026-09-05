@@ -213,3 +213,10 @@ and which validation or usability state actually changed.
 - **Boundary:** Editorial and licensing consistency does not establish human
   usability, implementation correctness, security, legal sufficiency,
   production fitness, retailer acceptance, or physical-proof quality.
+
+## September 5, 2026: supplied practice route
+
+Added a constructed equipment-checkout transfer case with an editorial answer.
+The manuscript remains independently useful through its own supplied exercises.
+No frozen packet, checksum manifest, or previous human-session record was changed.
+Independent practitioner sessions remain zero.

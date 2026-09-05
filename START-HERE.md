@@ -54,3 +54,10 @@ You now have a reviewable capability hypothesis, not an approved API. Continue
 with the [comprehensive example](examples/northbridge-inventory-reservation-meaning-authority-example.md),
 then select the authority, recovery, compatibility, capacity, and evidence
 tools required by the consequence.
+
+## Begin without a workplace project
+
+Try the [equipment-checkout exercise](supplied-practice-route.md), then transfer
+its five decisions to the Capability and Authority Contract. The revised book
+also supplies a case, worked answer, and changed assumption in every numbered
+chapter. These are teaching materials, not independent reader-test results.

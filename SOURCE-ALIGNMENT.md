@@ -1,6 +1,19 @@
 # Source Alignment and Permitted Drift
 
-**Current aligned book source:** `685fe68d959a4e539e476b4291899540ade6afa6` (September 5, 2026).
+**Current aligned book source:** `ad842c3cdb38b12bdf5cec50c486941edd944a78` (September 9, 2026).
+
+Reviewed the current book lessons, reader entry routes, active shared tools,
+worked examples, and dependency inventories. Missing active public assets have
+been supplied. Common differences remain only for reviewed distribution,
+licensing, layout, command-path, or historical provenance needs; the collection
+registry pins their exact bytes. Source-only historical reports are explicitly
+classified. A passing alignment check is not a human-learning result.
+
+The book source identifier records provenance; access to the private manuscript
+repository is not required to use the public tools. The paragraphs below retain
+the earlier edition history and the distribution rules.
+
+**September 5 aligned book source (historical):** `685fe68d959a4e539e476b4291899540ade6afa6` (September 5, 2026).
 The local improvement snapshot is now committed. Earlier provenance entries
 retain their original dates and evidence states; practitioner testing remains open.
 

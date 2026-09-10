@@ -3,7 +3,7 @@
   "title": "API Architecture for AI Systems Companion",
   "book_title": "API Architecture for AI Systems",
   "repository": "https://github.com/bmozi/api-architecture-for-ai-systems-companion",
-  "source_commit": "685fe68d959a4e539e476b4291899540ade6afa6",
+  "source_commit": "ad842c3cdb38b12bdf5cec50c486941edd944a78",
   "required_files": [
     "README.md",
     "LICENSE",
@@ -44,8 +44,15 @@
     {
       "path": "api-meaning-and-authority-brief.md",
       "first_pass": "Ten-minute first pass",
-      "required_language": ["Plain-language vocabulary", "outside"],
-      "examples": ["examples/northbridge-inventory-reservation-meaning-authority-example.md"]
+      "required_language": [
+        "Plain-language vocabulary",
+        "outside"
+      ],
+      "examples": [
+        "examples/northbridge-inventory-reservation-meaning-authority-example.md"
+      ]
     }
-  ]
+  ],
+  "alignment_date": "2026-09-09",
+  "alignment_scope": "Revised reader lessons, active companion tools, shared examples, routes, and dependency integrity; human learning untested"
 }

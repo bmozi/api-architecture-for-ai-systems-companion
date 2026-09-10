@@ -1,5 +1,17 @@
 # Provenance
 
+## September 9, 2026 book and companion alignment
+
+Author-directed alignment with the revised book added the five existing estate,
+fleet, and answer-route tools that had not reached this distribution. The
+mutation ledger now keeps its assertion fixed while the implementation changes;
+the registry holds ownerless admission; the practice route points to Appendix G's
+supplied sandbox capstone. The primary contract title now matches the book.
+These are AI-assisted editorial and navigation repairs, not measured reader
+learning. Existing synthetic records and frozen participant packets retain their
+original bytes and evidence states. Human sessions in this alignment: zero.
+
+
 - **Created:** 2026-08-29
 - **Book repository:** `bmozi/architecting-apis-in-the-age-of-ai`
 - **Source commit:** `48a1d47`

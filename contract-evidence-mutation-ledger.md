@@ -42,6 +42,17 @@ rather than counting each artifact as independent agreement.
 
 ## 3. Mutation ledger
 
+Before mutating, run the correct implementation with an assertion derived from
+the approved promise and retain the passing baseline. Change the implementation
+or its dependency behavior, keeping the input and assertion fixed. For example,
+make a consumer advance `review_required` without approval; the unchanged
+assertion that it must wait should fail. Changing the expected answer alone
+does not test whether the implementation violates the promise. Record the code
+revision, executed path, baseline, mutation, and unchanged assertion. If the
+mutation stays green, inspect whether it ran and whether the assertion can
+detect the defect. These instructions describe a planned test, not a result.
+
+
 | Promise dimension | Deliberate mutation | First expected detector | Other layers expected to remain green | Result | First actual detector | Evidence link | Gap or follow-up |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Shape | | | | unrun | | | |

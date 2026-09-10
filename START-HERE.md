@@ -55,6 +55,15 @@ with the [comprehensive example](examples/northbridge-inventory-reservation-mean
 then select the authority, recovery, compatibility, capacity, and evidence
 tools required by the consequence.
 
+## Extend the first pass
+
+Use the [Annotated Answer Index](annotated-answer-index.md) to connect chapter
+practice to the forms. For an estate or MCP fleet, continue through the
+[Capability Corral](capability-corral-worksheet.md),
+[Gap-Closing Workbook](api-architecture-gap-closing-workbook.md),
+[Server and Capability Registry](mcp-server-capability-registry.md), and
+[Threat Matrix](mcp-threat-abuse-trust-boundary-matrix.md).
+
 ## Begin without a workplace project
 
 Try the [equipment-checkout exercise](supplied-practice-route.md), then transfer

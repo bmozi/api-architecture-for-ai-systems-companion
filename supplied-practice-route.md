@@ -5,6 +5,16 @@ short fictional case, a worked answer, and a changed assumption. Attempt the
 case before reading its answer. Then transfer one decision into the relevant
 blank companion form. A completed form is a proposal until its evidence exists.
 
+## Continue to the integrated capstone
+
+Appendix G of the revised book supplies the development-sandbox capstone and
+its worked brief. Attempt it before reading the answer, then record its actor,
+team grant, atomic capacity rule, same-intent recovery, five-minute escalation,
+and revocation boundary in the [Meaning-and-Authority Brief](api-meaning-and-authority-brief.md)
+and [Idempotency and Outcome Test Matrix](idempotency-and-outcome-test-matrix.md).
+The supplied facts and answer remain in the book; the forms make your reasoning
+reviewable. All implementation tests remain unrun until executed.
+
 ## A transfer case: equipment checkout
 
 A library lends cameras. A patron may request one camera for a weekend; the

@@ -1,4 +1,6 @@
-# API Meaning-and-Authority Brief
+# Capability and Authority Contract
+
+_Working filename and legacy references: API Meaning-and-Authority Brief._
 
 Use this before selecting endpoints, schemas, frameworks, or generated code.
 

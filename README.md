@@ -64,12 +64,10 @@ architect, manager, and executive decisions. The [Team Workshop](TEAM-WORKSHOP.m
 [Value and Evidence Ledger](VALUE-AND-EVIDENCE-LEDGER.md),
 [Executive Decision Brief](EXECUTIVE-DECISION-BRIEF.md), and
 [Failure Lab](FAILURE-LAB.md) turn one capability into a cross-role review.
-The [Pilot and Usability Route](PILOT-AND-USABILITY.md) and reader-value packet
-version 1.2.6 remain prepared and unrun with human participants. Version 1.2.6
-preserves the complete version 1.2.5 closure contract and makes entry-branch
-selection precede run start in both machine and reader-facing routes. The exact
-five-member Stage A revision binding remains unchanged. Real-world evidence
-remains unrun.
+Human learner and practitioner testing remains unrun. Facilitators can use the
+[Pilot and Usability Route](PILOT-AND-USABILITY.md); its
+[protocol history](FACILITATOR-PROTOCOL-HISTORY.md) preserves the administration
+details. Begin with the thirty-minute first pass above before choosing a workshop.
 
 ## Imagine and shape what comes next
 

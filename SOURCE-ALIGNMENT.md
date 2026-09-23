@@ -1,6 +1,6 @@
 # Source Alignment and Permitted Drift
 
-**Current aligned book source:** `ad842c3cdb38b12bdf5cec50c486941edd944a78` (September 9, 2026).
+**Current aligned book source:** `a45a9fac82a8addbae3b160088460736a18ced8d` (September 23, 2026).
 
 Reviewed the current book lessons, reader entry routes, active shared tools,
 worked examples, and dependency inventories. Missing active public assets have

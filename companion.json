@@ -3,7 +3,7 @@
   "title": "API Architecture for AI Systems Companion",
   "book_title": "API Architecture for AI Systems",
   "repository": "https://github.com/bmozi/api-architecture-for-ai-systems-companion",
-  "source_commit": "ad842c3cdb38b12bdf5cec50c486941edd944a78",
+  "source_commit": "a45a9fac82a8addbae3b160088460736a18ced8d",
   "required_files": [
     "README.md",
     "LICENSE",
@@ -53,6 +53,6 @@
       ]
     }
   ],
-  "alignment_date": "2026-09-09",
-  "alignment_scope": "Revised reader lessons, active companion tools, shared examples, routes, and dependency integrity; human learning untested"
+  "alignment_date": "2026-09-23",
+  "alignment_scope": "Committed book source and active shared assets checked; distribution differences explicitly recorded; human learning untested"
 }

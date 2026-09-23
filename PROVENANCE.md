@@ -1,5 +1,14 @@
 # Provenance
 
+## September 12, 2026 reader review corrections
+
+The implementation brief now asks for a contradictory schema, revealing payload,
+corrected rule, and control cases, aligned with the book's Chapter 15 teaching
+example. README pilot administration moved verbatim to
+`FACILITATOR-PROTOCOL-HISTORY.md`; existing protocols and frozen packets did not
+change. Human learning remains untested. These are author-directed, AI-assisted
+instructional and navigation edits, not observed deployment outcomes.
+
 ## September 9, 2026 book and companion alignment
 
 Author-directed alignment with the revised book added the five existing estate,
@@ -232,3 +241,12 @@ Added a constructed equipment-checkout transfer case with an editorial answer.
 The manuscript remains independently useful through its own supplied exercises.
 No frozen packet, checksum manifest, or previous human-session record was changed.
 Independent practitioner sessions remain zero.
+
+
+## September 23, 2026 — committed source reconciliation
+
+John authorized review, commit and push of local book and companion work.
+The current source pin is `a45a9fac82a8addbae3b160088460736a18ced8d`. Shared-file comparison and the
+collection registry retain explicit distribution differences; the September 12
+facilitator relocations are now classified. Frozen study packets remain intact.
+This records repository alignment, not human learning or retailer publication.

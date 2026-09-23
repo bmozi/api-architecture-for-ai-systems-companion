@@ -96,6 +96,13 @@ evidence of what generation originally produced.
 
 ## Verification and independence plan
 
+For one schema rule, retain the contradictory fragment, a payload that exposes
+it, the corrected rule, and the expected accept/reject results. Include a
+positive control and a changed condition. Chapter 15 uses receipt versus
+accepted-work identity: making an identifier optional is insufficient if an
+accepted response still requires it. A passing schema checks representation;
+it does not prove acceptance, authority, or provider behavior.
+
 | Evidence layer | Source/author/generator and authoritative input | Shared fixture or assumption provenance | Required test or observation | Failure mutation | Status and observed result | Retained artifact | Green blind layers | What this does not establish | Owner/interpreter authority |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Schema | | | | | planned/unrun/pass/fail/unknown | | | | |

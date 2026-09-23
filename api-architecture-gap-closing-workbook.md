@@ -148,6 +148,9 @@ how revocation propagates, and who owns work accepted before revocation.
 
 ## 5. Design and govern the AI surface
 
+If no consumer needs an AI surface, record that decision and skip this section.
+A conventional API can remain the appropriate interface.
+
 | Tool/resource | User outcome | Read/mutate | Inputs/scope | Authority check | Confirmation | Output/evidence | Stop/failure rule |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | |

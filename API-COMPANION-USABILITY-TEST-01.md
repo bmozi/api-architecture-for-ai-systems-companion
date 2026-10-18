@@ -20,6 +20,24 @@ No external standards, regulations, vendor documentation, production systems,
 or measured outcomes were evaluated. All response times, states, and authority
 rules are proposed scenario inputs rather than reported facts.
 
+## Editorial clarification — October 18, 2026
+
+The August desk-test record below is preserved as historical evidence. Two
+parts of its proposed contract need qualification before reuse:
+
+- In section 4, the two-second target cannot guarantee rejection or durable
+  acceptance. If durable custody cannot be established, return an appropriate
+  unavailable result; if acceptance may have occurred but its response was
+  lost, preserve that uncertainty and reconcile the same intent.
+- In section 5, not receiving a `refund_request_id` does not prove that no
+  request exists. Distinguish a known pre-acceptance failure from an ambiguous
+  acceptance or downstream effect. Recover using the same business identity
+  and the documented lookup/retry contract; do not create a fresh refund
+  identity merely because the original response is missing.
+
+These are later editorial corrections, not additional August test results or
+proof that the proposed design has been implemented or validated.
+
 ## Constructed design-review scenario
 
 Harborline Home Goods, a fictional retailer, sells through a fictional

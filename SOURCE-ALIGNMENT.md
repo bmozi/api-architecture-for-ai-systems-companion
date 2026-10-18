@@ -53,3 +53,21 @@ match unless explicitly classified, and standalone-only paths fit declared
 distribution categories. Repository validation and source alignment do not
 prove usability, correctness, safety, production fitness, or retailer
 acceptance.
+
+## October 18, 2026 paired working revision
+
+The protected intent distinguishes duplicate effects, permitted zero-effect outcomes, and unresolved effects. The historical August desk-test has a dated clarification without altering its evidence state.
+
+These changes match the revised embedded companion in the local book working
+tree. The September commit above remains the last recorded committed source;
+this note does not invent a new commit pin or claim publication, practitioner
+validation, or author approval. Historical prepared packets retain their
+evidence states.
+
+## October 18, 2026 — Committed source alignment
+
+Current companion source pin: `6787ef3357f430f97cf3a90f22dc972abdf7a099` in `architecting-apis-in-the-age-of-ai`.
+The reviewed book revision is committed and synchronized. This entry supersedes
+the working-copy status above; earlier entries remain historical. Shared
+content and explicit distribution differences passed the collection validator.
+This records source alignment, not a reader trial or Amazon publication.

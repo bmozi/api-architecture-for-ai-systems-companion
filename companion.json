@@ -3,7 +3,7 @@
   "title": "API Architecture for AI Systems Companion",
   "book_title": "API Architecture for AI Systems",
   "repository": "https://github.com/bmozi/api-architecture-for-ai-systems-companion",
-  "source_commit": "a45a9fac82a8addbae3b160088460736a18ced8d",
+  "source_commit": "6787ef3357f430f97cf3a90f22dc972abdf7a099",
   "required_files": [
     "README.md",
     "LICENSE",

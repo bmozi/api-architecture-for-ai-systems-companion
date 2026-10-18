@@ -20,7 +20,9 @@ defined outcome and the evidence required when they do not.
 ## 1. Protected intent
 
 - **Capability and operation:**
-- **Business outcome that must occur once:**
+- **Business effect protected against duplication:**
+- **Allowed zero-effect outcomes, such as rejection:**
+- **How an unknown effect remains unresolved until reconciled:**
 - **Consumer-supplied identity:**
 - **Provider scope for that identity:**
 - **Material intent fields bound to the identity:**
